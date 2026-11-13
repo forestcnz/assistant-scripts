@@ -1,3 +1,4 @@
+from datetime import datetime, timedelta, timezone
 import json
 from pathlib import Path
 import subprocess
@@ -8,6 +9,7 @@ from build_catalog import ROOT
 
 REPO = "forestcnz/assistant-scripts"
 PUBLISH_BRANCH = "master"
+CHINA_TIME = timezone(timedelta(hours=8))
 
 
 def git(*args):
@@ -42,13 +44,14 @@ def main():
         except subprocess.CalledProcessError:
             current = None
         if current is None:
-            release("create", tag, *assets, "--target", revision, "--title", f"脚本市场 {revision[:7]}", "--draft")
+            release("create", tag, *assets, "--target", revision, "--draft")
         elif current["isDraft"]:
             release("upload", tag, *assets, "--clobber")
         else:
             print(current["url"])
             return
-        release("edit", tag, "--draft=false", "--latest")
+        title = datetime.now(CHINA_TIME).strftime("v%Y%m%d%H%M")
+        release("edit", tag, "--title", title, "--draft=false", "--latest")
 
 
 if __name__ == "__main__":
