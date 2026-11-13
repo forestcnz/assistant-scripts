@@ -1,0 +1,25 @@
+name: 发布脚本市场
+
+on:
+  push:
+    branches: [master]
+  workflow_dispatch:
+
+concurrency:
+  group: publish-script-market
+  cancel-in-progress: false
+
+jobs:
+  publish:
+    if: github.ref == 'refs/heads/master'
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          persist-credentials: false
+      - name: 打包并发布市场
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: python3 tools/publish.py
