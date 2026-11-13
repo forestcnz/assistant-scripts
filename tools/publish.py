@@ -1,11 +1,13 @@
 import json
 from pathlib import Path
 import subprocess
+import sys
 from tempfile import TemporaryDirectory
 
 from build_catalog import ROOT
 
 REPO = "forestcnz/assistant-scripts"
+PUBLISH_BRANCH = "master"
 
 
 def git(*args):
@@ -23,13 +25,12 @@ def main():
     if git("status", "--porcelain"):
         raise SystemExit("Commit and push market changes before publishing.")
     revision = git("rev-parse", "HEAD")
-    remote = git("ls-remote", f"https://github.com/{REPO}.git", "refs/heads/main")
+    remote = git("ls-remote", f"https://github.com/{REPO}.git", f"refs/heads/{PUBLISH_BRANCH}")
     if not remote or remote.split()[0] != revision:
-        raise SystemExit("Check out the current remote main commit before publishing.")
+        raise SystemExit(f"Check out the current remote {PUBLISH_BRANCH} commit before publishing.")
     tag = f"market-{revision}"
     with TemporaryDirectory(prefix="assistant-market-") as temp:
         output = Path(temp)
-        import sys
         subprocess.run(
             [sys.executable, str(ROOT / "tools/build_catalog.py"), "--output", temp],
             cwd=ROOT,
