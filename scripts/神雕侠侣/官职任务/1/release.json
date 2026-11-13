@@ -1,0 +1,17 @@
+{
+  "title": "官职任务",
+  "description": "到临安找吏部尚书领取每日官职任务。",
+  "author": "forestcnz",
+  "version": "1.0.0",
+  "usage": "从能打开地图的游戏主界面启动。脚本在临安定位地标并调整位置，找到吏部尚书后尝试领取官职任务。若长时间找不到地标，可手动停止。",
+  "environment": "设计尺寸为 1920 × 1080 横屏。请确认游戏界面布局与任务素材一致。",
+  "capabilities": [
+    "无障碍点击",
+    "截屏找图"
+  ],
+  "changes": "首次上架。",
+  "updatedAt": "2026-11-13",
+  "minAppVersionCode": 14,
+  "targetApp": "神雕侠侣",
+  "scriptId": "official-rank-quest"
+}

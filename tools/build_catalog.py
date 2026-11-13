@@ -17,6 +17,9 @@ TEXT_FIELDS = {
 
 
 def validate_metadata(metadata):
+    script_id = metadata["scriptId"]
+    if not isinstance(script_id, str) or len(script_id) > 48 or not re.fullmatch(r"[a-z0-9]+(?:-[a-z0-9]+)*", script_id):
+        raise ValueError("Invalid script ID")
     for field, limit in TEXT_FIELDS.items():
         value = metadata[field]
         if not isinstance(value, str) or not 1 <= len(value.strip()) <= limit:
@@ -76,6 +79,15 @@ def pack(directory, output):
         raise ValueError(f"ZIP too large: {directory}")
 
 
+def source_directories(parent):
+    for path in sorted(parent.iterdir()):
+        if not path.is_dir() or path.is_symlink() or not 1 <= len(path.name) <= 80 or any(
+            ord(c) < 32 or 127 <= ord(c) < 160 or c == chr(92) for c in path.name
+        ):
+            raise ValueError(f"Invalid source directory: {path}")
+        yield path
+
+
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("--output", type=Path, required=True)
@@ -83,22 +95,31 @@ def main():
     output.mkdir(parents=True, exist_ok=True)
     revision = subprocess.check_output(["git", "rev-parse", "HEAD"], cwd=ROOT, text=True).strip()
     releases = []
-    for script in sorted((ROOT / "scripts").iterdir()):
-        if not script.is_dir() or script.is_symlink() or len(script.name) > 48 or not re.fullmatch(r"[a-z0-9]+(?:-[a-z0-9]+)*", script.name):
-            raise ValueError(f"Invalid script directory: {script}")
-        for version in sorted(script.iterdir()):
-            if not version.is_dir() or version.is_symlink() or not re.fullmatch(r"[1-9][0-9]{0,9}", version.name) or int(version.name) > 2147483647:
+    applications = source_directories(ROOT / "scripts")
+    seen_ids = {}
+    for script in (task for app in applications for task in source_directories(app)):
+        script_id = None
+        for version in source_directories(script):
+            if not re.fullmatch(r"[1-9][0-9]{0,9}", version.name) or int(version.name) > 2147483647:
                 raise ValueError(f"Invalid version directory: {version}")
             metadata_path = version / "release.json"
             if metadata_path.is_symlink():
                 raise ValueError(f"Unexpected symlink: {metadata_path}")
             metadata = json.loads(metadata_path.read_text(encoding="utf-8"))
             validate_metadata(metadata)
-            package = output / f"{script.name}-{version.name}.zip"
+            version_id = metadata["scriptId"]
+            if script_id is not None and script_id != version_id:
+                raise ValueError(f"Versions of {script} must have the same script ID")
+            script_id = version_id
+            if seen_ids.setdefault(script_id, script) != script:
+                raise ValueError(f"Duplicate script ID: {script_id}")
+            if (metadata.get("targetApp") or "通用") != script.parent.name:
+                raise ValueError(f"Target app does not match the source directory: {script}")
+            package = output / f"{script_id}-{version.name}.zip"
             pack(version, package)
             releases.append({
                 **metadata,
-                "scriptId": script.name,
+                "sourcePath": version.relative_to(ROOT).as_posix(),
                 "versionCode": int(version.name),
                 "revision": revision,
                 "sizeBytes": package.stat().st_size,

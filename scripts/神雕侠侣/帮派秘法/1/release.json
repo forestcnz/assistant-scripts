@@ -1,0 +1,17 @@
+{
+  "title": "帮派秘法",
+  "description": "前往帮派找梦瑶，进入秘境后重复挑战。",
+  "author": "forestcnz",
+  "version": "1.0.0",
+  "usage": "从能打开地图的游戏主界面启动，并确认角色已加入帮派、可以进入秘境。脚本会进入帮派、找梦瑶开启秘境并尝试闯关。挑战会持续循环，需要时手动停止。",
+  "environment": "设计尺寸为 1920 × 1080 横屏。请确认游戏界面布局与任务素材一致。",
+  "capabilities": [
+    "无障碍点击",
+    "截屏找图"
+  ],
+  "changes": "首次上架。",
+  "updatedAt": "2026-11-13",
+  "minAppVersionCode": 14,
+  "targetApp": "神雕侠侣",
+  "scriptId": "guild-secret-arts"
+}
