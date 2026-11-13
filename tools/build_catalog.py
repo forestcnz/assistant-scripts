@@ -20,6 +20,9 @@ def validate_metadata(metadata):
     script_id = metadata["scriptId"]
     if not isinstance(script_id, str) or len(script_id) > 48 or not re.fullmatch(r"[a-z0-9]+(?:-[a-z0-9]+)*", script_id):
         raise ValueError("Invalid script ID")
+    version = metadata.get("version")
+    if type(version) is not int or not 1 <= version <= 2147483647:
+        raise ValueError("Invalid script version")
     for field, limit in TEXT_FIELDS.items():
         value = metadata[field]
         if not isinstance(value, str) or not 1 <= len(value.strip()) <= limit:

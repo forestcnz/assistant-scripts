@@ -10,6 +10,7 @@
   ],
   "changes": "首次上架。",
   "updatedAt": "2026-11-13",
+  "version": 1,
   "minAppVersionCode": 14,
   "targetApp": "神雕侠侣",
   "scriptId": "guild-secret-arts"
