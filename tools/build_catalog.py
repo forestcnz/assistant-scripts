@@ -11,7 +11,7 @@ ROOT = Path(__file__).resolve().parents[1]
 TASK_FILES = {"task.js", "config.json", "flow.json"}
 IMAGE_SUFFIXES = {".png", ".jpg", ".jpeg", ".webp"}
 TEXT_FIELDS = {
-    "title": 50, "description": 200, "author": 60, "version": 24,
+    "title": 50, "description": 200, "author": 60,
     "usage": 2000, "environment": 500, "changes": 500,
 }
 
@@ -96,35 +96,29 @@ def main():
     revision = subprocess.check_output(["git", "rev-parse", "HEAD"], cwd=ROOT, text=True).strip()
     releases = []
     applications = source_directories(ROOT / "scripts")
-    seen_ids = {}
+    seen_ids = set()
     for script in (task for app in applications for task in source_directories(app)):
-        script_id = None
-        for version in source_directories(script):
-            if not re.fullmatch(r"[1-9][0-9]{0,9}", version.name) or int(version.name) > 2147483647:
-                raise ValueError(f"Invalid version directory: {version}")
-            metadata_path = version / "release.json"
-            if metadata_path.is_symlink():
-                raise ValueError(f"Unexpected symlink: {metadata_path}")
-            metadata = json.loads(metadata_path.read_text(encoding="utf-8"))
-            validate_metadata(metadata)
-            version_id = metadata["scriptId"]
-            if script_id is not None and script_id != version_id:
-                raise ValueError(f"Versions of {script} must have the same script ID")
-            script_id = version_id
-            if seen_ids.setdefault(script_id, script) != script:
-                raise ValueError(f"Duplicate script ID: {script_id}")
-            if (metadata.get("targetApp") or "通用") != script.parent.name:
-                raise ValueError(f"Target app does not match the source directory: {script}")
-            package = output / f"{script_id}-{version.name}.zip"
-            pack(version, package)
-            releases.append({
-                **metadata,
-                "sourcePath": version.relative_to(ROOT).as_posix(),
-                "versionCode": int(version.name),
-                "revision": revision,
-                "sizeBytes": package.stat().st_size,
-                "sha256": hashlib.sha256(package.read_bytes()).hexdigest(),
-            })
+        metadata_path = script / "release.json"
+        if metadata_path.is_symlink():
+            raise ValueError(f"Unexpected symlink: {metadata_path}")
+        metadata = json.loads(metadata_path.read_text(encoding="utf-8"))
+        validate_metadata(metadata)
+        script_id = metadata["scriptId"]
+        if script_id in seen_ids:
+            raise ValueError(f"Duplicate script ID: {script_id}")
+        seen_ids.add(script_id)
+        if (metadata.get("targetApp") or "通用") != script.parent.name:
+            raise ValueError(f"Target app does not match the source directory: {script}")
+        if metadata["title"] != script.name:
+            raise ValueError(f"Task name does not match the source directory: {script}")
+        package = output / f"{script_id}.zip"
+        pack(script, package)
+        releases.append({
+            **metadata,
+            "revision": revision,
+            "sizeBytes": package.stat().st_size,
+            "sha256": hashlib.sha256(package.read_bytes()).hexdigest(),
+        })
     catalog = json.dumps({"schemaVersion": 1, "releases": releases}, ensure_ascii=False, indent=2) + "\n"
     if len(releases) > 500 or len(catalog.encode("utf-8")) > 1024 * 1024:
         raise ValueError("Catalog exceeds app limits")
