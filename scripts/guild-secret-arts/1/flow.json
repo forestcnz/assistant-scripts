@@ -1,0 +1,209 @@
+{
+  "schemaVersion": 1,
+  "nodes": [
+    {
+      "id": "node-mw6aj875-tvzvr",
+      "type": "click",
+      "title": "去地图",
+      "enabled": true,
+      "props": {
+        "failure": "stop",
+        "x": 1777,
+        "y": 24,
+        "duration": 50
+      }
+    },
+    {
+      "id": "node-mw6ajcr4-dxc8y",
+      "type": "wait",
+      "title": "等待",
+      "enabled": true,
+      "props": {
+        "failure": "stop",
+        "duration": 1000
+      }
+    },
+    {
+      "id": "node-mw6aj9hh-2xjlk",
+      "type": "click",
+      "title": "去帮派",
+      "enabled": true,
+      "props": {
+        "failure": "stop",
+        "x": 1472,
+        "y": 912,
+        "duration": 50
+      }
+    },
+    {
+      "id": "node-mw6alqid-mcrxy",
+      "type": "image",
+      "title": "找图",
+      "enabled": true,
+      "props": {
+        "failure": "stop",
+        "asset": "梦瑶.png",
+        "threshold": 0.7,
+        "timeout": 5000,
+        "poll": 300,
+        "onMatch": "click",
+        "onMiss": "continue",
+        "region": ""
+      }
+    },
+    {
+      "id": "node-mw6ase8f-hf4z7",
+      "type": "wait",
+      "title": "等待",
+      "enabled": true,
+      "props": {
+        "failure": "stop",
+        "duration": 4000
+      }
+    },
+    {
+      "id": "node-mw6asqf1-rl75e",
+      "type": "image",
+      "title": "进入秘境",
+      "enabled": true,
+      "props": {
+        "failure": "stop",
+        "asset": "进入秘境.png",
+        "threshold": 0.9,
+        "timeout": 5000,
+        "poll": 300,
+        "onMatch": "click",
+        "onMiss": "continue",
+        "region": ""
+      }
+    },
+    {
+      "id": "node-mw6b6924-ei9us",
+      "type": "wait",
+      "title": "等待",
+      "enabled": true,
+      "props": {
+        "failure": "stop",
+        "duration": 1000
+      }
+    },
+    {
+      "id": "node-mw6awvvz-5vi74",
+      "type": "image",
+      "title": "闯关",
+      "enabled": true,
+      "props": {
+        "failure": "stop",
+        "asset": "闯关.png",
+        "threshold": 0.9,
+        "timeout": 5000,
+        "poll": 300,
+        "onMatch": "click",
+        "onMiss": "continue",
+        "region": ""
+      }
+    },
+    {
+      "id": "node-mw6b6bdu-eaps5",
+      "type": "wait",
+      "title": "等待",
+      "enabled": true,
+      "props": {
+        "failure": "stop",
+        "duration": 1000
+      }
+    },
+    {
+      "id": "node-mw6atumz-tbqca",
+      "type": "repeat",
+      "title": "持续循环",
+      "enabled": true,
+      "props": {
+        "failure": "stop",
+        "mode": "forever",
+        "count": 5,
+        "interval": 300
+      },
+      "children": [
+        {
+          "id": "node-mw6ax7lg-lt9hk",
+          "type": "image",
+          "title": "挑战",
+          "enabled": true,
+          "props": {
+            "failure": "stop",
+            "asset": "挑战.png",
+            "threshold": 0.9,
+            "timeout": 5000,
+            "poll": 300,
+            "onMatch": "click",
+            "onMiss": "continue",
+            "region": ""
+          }
+        },
+        {
+          "id": "node-mw6ayavf-gxw49",
+          "type": "wait",
+          "title": "等待",
+          "enabled": true,
+          "props": {
+            "failure": "stop",
+            "duration": 2000
+          }
+        },
+        {
+          "id": "node-mw6b0z57-g6s7a",
+          "type": "repeat",
+          "title": "条件循环",
+          "enabled": true,
+          "props": {
+            "failure": "stop",
+            "mode": "while",
+            "count": 5,
+            "interval": 300,
+            "conditionValue": "战胜确认.png",
+            "combine": "single"
+          },
+          "children": [
+            {
+              "id": "node-mw6b1a41-he1sv",
+              "type": "image",
+              "title": "确认",
+              "enabled": true,
+              "props": {
+                "failure": "stop",
+                "asset": "战胜确认.png",
+                "threshold": 0.9,
+                "timeout": 5000,
+                "poll": 300,
+                "onMatch": "click",
+                "onMiss": "continue",
+                "region": ""
+              }
+            },
+            {
+              "id": "node-mw6b1r78-bocbp",
+              "type": "wait",
+              "title": "等待",
+              "enabled": true,
+              "props": {
+                "failure": "stop",
+                "duration": 1000
+              }
+            },
+            {
+              "id": "node-mw6b29cz-vkidf",
+              "type": "continue",
+              "title": "进入下一轮",
+              "enabled": true,
+              "props": {
+                "failure": "stop"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "globalCount": 1
+}

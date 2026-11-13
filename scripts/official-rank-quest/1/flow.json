@@ -1,0 +1,235 @@
+{
+  "schemaVersion": 1,
+  "nodes": [
+    {
+      "id": "node-mw7nmoki-mbkfc",
+      "type": "repeat",
+      "title": "持续循环",
+      "enabled": true,
+      "props": {
+        "failure": "stop",
+        "mode": "forever",
+        "count": 5,
+        "interval": 300
+      },
+      "children": [
+        {
+          "id": "node-mw7nmr5t-4r7ic",
+          "type": "condition",
+          "title": "条件分支",
+          "enabled": true,
+          "props": {
+            "failure": "stop",
+            "conditionKind": "image",
+            "conditionValue": "中心龙头.png",
+            "combine": "single",
+            "conditionThreshold": 0.7
+          },
+          "then": [
+            {
+              "id": "node-mw7nnpzj-n34hp",
+              "type": "image",
+              "title": "找图",
+              "enabled": true,
+              "props": {
+                "failure": "stop",
+                "asset": "中心龙头.png",
+                "threshold": 0.8,
+                "timeout": 5000,
+                "poll": 300,
+                "onMatch": "click",
+                "onMiss": "continue",
+                "region": ""
+              }
+            },
+            {
+              "id": "node-mw7nok34-dla8k",
+              "type": "wait",
+              "title": "等待",
+              "enabled": true,
+              "props": {
+                "failure": "stop",
+                "duration": 6000
+              }
+            },
+            {
+              "id": "node-mw7nopam-ytpnm",
+              "type": "break",
+              "title": "退出循环",
+              "enabled": true,
+              "props": {
+                "failure": "stop"
+              }
+            }
+          ],
+          "else": [
+            {
+              "id": "node-mw8zmicl-1-hetta",
+              "type": "sequence",
+              "title": "地图->临安",
+              "enabled": true,
+              "props": {
+                "failure": "stop"
+              },
+              "children": [
+                {
+                  "id": "node-mw8zmicl-2-hbo5o",
+                  "type": "click",
+                  "title": "地图",
+                  "enabled": true,
+                  "props": {
+                    "failure": "stop",
+                    "x": 1778,
+                    "y": 24,
+                    "duration": 50
+                  }
+                },
+                {
+                  "id": "node-mw8zmicl-3-q61l0",
+                  "type": "wait",
+                  "title": "等待",
+                  "enabled": true,
+                  "props": {
+                    "failure": "stop",
+                    "duration": 1000
+                  }
+                },
+                {
+                  "id": "node-mw8zmicl-4-32fc9",
+                  "type": "click",
+                  "title": "临安",
+                  "enabled": true,
+                  "props": {
+                    "failure": "stop",
+                    "x": 1103,
+                    "y": 760,
+                    "duration": 50
+                  }
+                },
+                {
+                  "id": "node-mw8zmicl-5-bkxsq",
+                  "type": "wait",
+                  "title": "等待",
+                  "enabled": true,
+                  "props": {
+                    "failure": "stop",
+                    "duration": 1000
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "node-mw7nr3of-2qzon",
+      "type": "click",
+      "title": "调整位置1",
+      "enabled": true,
+      "props": {
+        "failure": "stop",
+        "x": 1619,
+        "y": 129,
+        "duration": 50
+      }
+    },
+    {
+      "id": "node-mw7nw0ao-hbn3x",
+      "type": "wait",
+      "title": "等待",
+      "enabled": true,
+      "props": {
+        "failure": "stop",
+        "duration": 3000
+      }
+    },
+    {
+      "id": "node-mw7nvs5b-je7sd",
+      "type": "click",
+      "title": "调整位置2",
+      "enabled": true,
+      "props": {
+        "failure": "stop",
+        "x": 1619,
+        "y": 129,
+        "duration": 50
+      }
+    },
+    {
+      "id": "node-mw7nribw-afm89",
+      "type": "wait",
+      "title": "等待",
+      "enabled": true,
+      "props": {
+        "failure": "stop",
+        "duration": 1000
+      }
+    },
+    {
+      "id": "node-mw7o6u09-mr47l",
+      "type": "image",
+      "title": "吏部尚书",
+      "enabled": true,
+      "props": {
+        "failure": "stop",
+        "asset": "吏部尚书.png",
+        "threshold": 0.8,
+        "timeout": 10000,
+        "poll": 300,
+        "onMatch": "click",
+        "onMiss": "continue",
+        "region": ""
+      }
+    },
+    {
+      "id": "node-mw7obdkc-8e7et",
+      "type": "wait",
+      "title": "等待",
+      "enabled": true,
+      "props": {
+        "failure": "stop",
+        "duration": 5000
+      }
+    },
+    {
+      "id": "node-mw7oastb-s06aa",
+      "type": "image",
+      "title": "领取任务",
+      "enabled": true,
+      "props": {
+        "failure": "stop",
+        "asset": "领取官职任务.png",
+        "threshold": 0.8,
+        "timeout": 5000,
+        "poll": 300,
+        "onMatch": "click",
+        "onMiss": "continue",
+        "region": ""
+      }
+    },
+    {
+      "id": "node-mw8xs3xu-hd78e",
+      "type": "wait",
+      "title": "等待",
+      "enabled": true,
+      "props": {
+        "failure": "stop",
+        "duration": 500
+      }
+    },
+    {
+      "id": "node-mw7od22t-es2c9",
+      "type": "click",
+      "title": "点击",
+      "enabled": true,
+      "props": {
+        "failure": "stop",
+        "x": 830,
+        "y": 562,
+        "duration": 50
+      }
+    }
+  ],
+  "globalCount": 1
+}

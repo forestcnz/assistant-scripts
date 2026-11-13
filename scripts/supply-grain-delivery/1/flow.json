@@ -1,0 +1,283 @@
+{
+  "schemaVersion": 1,
+  "nodes": [
+    {
+      "id": "node-mw7mab46-74kyf",
+      "type": "click",
+      "title": "入口",
+      "enabled": true,
+      "props": {
+        "failure": "stop",
+        "x": 383,
+        "y": 130,
+        "duration": 50
+      }
+    },
+    {
+      "id": "node-mw7mca3a-3sm58",
+      "type": "wait",
+      "title": "等待",
+      "enabled": true,
+      "props": {
+        "failure": "stop",
+        "duration": 1000
+      }
+    },
+    {
+      "id": "node-mw7mcdex-ef3xg",
+      "type": "repeat",
+      "title": "固定循环",
+      "enabled": true,
+      "props": {
+        "failure": "stop",
+        "mode": "count",
+        "count": 5,
+        "interval": 300
+      },
+      "children": [
+        {
+          "id": "node-mw7mcq0e-e1f9t",
+          "type": "click",
+          "title": "领取",
+          "enabled": true,
+          "props": {
+            "failure": "stop",
+            "x": 96,
+            "y": 420,
+            "duration": 50
+          }
+        },
+        {
+          "id": "node-mw7mk5gg-ejyln",
+          "type": "wait",
+          "title": "等待",
+          "enabled": true,
+          "props": {
+            "failure": "stop",
+            "duration": 2000
+          }
+        },
+        {
+          "id": "node-mw7mcs4f-udvec",
+          "type": "click",
+          "title": "搬运粮食",
+          "enabled": true,
+          "props": {
+            "failure": "stop",
+            "x": 400,
+            "y": 646,
+            "duration": 50
+          }
+        },
+        {
+          "id": "node-mw7mkd8n-v6equ",
+          "type": "wait",
+          "title": "等待",
+          "enabled": true,
+          "props": {
+            "failure": "stop",
+            "duration": 2000
+          }
+        },
+        {
+          "id": "node-mw7mcr1p-nthgq",
+          "type": "click",
+          "title": "战略图",
+          "enabled": true,
+          "props": {
+            "failure": "stop",
+            "x": 1752,
+            "y": 881,
+            "duration": 50
+          }
+        },
+        {
+          "id": "node-mw7mkh3t-mtdin",
+          "type": "wait",
+          "title": "等待",
+          "enabled": true,
+          "props": {
+            "failure": "stop",
+            "duration": 3000
+          }
+        },
+        {
+          "id": "node-mw7mct5q-azuxa",
+          "type": "click",
+          "title": "粮仓",
+          "enabled": true,
+          "props": {
+            "failure": "stop",
+            "x": 960,
+            "y": 350,
+            "duration": 50
+          }
+        },
+        {
+          "id": "node-mw7mks9r-08tsl",
+          "type": "wait",
+          "title": "等待",
+          "enabled": true,
+          "props": {
+            "failure": "stop",
+            "duration": 20000
+          }
+        },
+        {
+          "id": "node-mw7mcu7n-zv8ub",
+          "type": "click",
+          "title": "交粮",
+          "enabled": true,
+          "props": {
+            "failure": "stop",
+            "x": 96,
+            "y": 420,
+            "duration": 50
+          }
+        },
+        {
+          "id": "node-mw7ml0nl-m1umu",
+          "type": "wait",
+          "title": "等待",
+          "enabled": true,
+          "props": {
+            "failure": "stop",
+            "duration": 9000
+          }
+        },
+        {
+          "id": "node-mw7mcv75-h9n41",
+          "type": "click",
+          "title": "到付",
+          "enabled": true,
+          "props": {
+            "failure": "stop",
+            "x": 216,
+            "y": 716,
+            "duration": 50
+          }
+        },
+        {
+          "id": "node-mw7ml8u7-y416j",
+          "type": "wait",
+          "title": "等待",
+          "enabled": true,
+          "props": {
+            "failure": "stop",
+            "duration": 1000
+          }
+        }
+      ]
+    },
+    {
+      "id": "node-mw7my9zu-umdoi",
+      "type": "wait",
+      "title": "等待",
+      "enabled": true,
+      "props": {
+        "failure": "stop",
+        "duration": 1000
+      }
+    },
+    {
+      "id": "node-mw7n76go-1o1d9",
+      "type": "click",
+      "title": "地图",
+      "enabled": true,
+      "props": {
+        "failure": "stop",
+        "x": 1778,
+        "y": 24,
+        "duration": 50
+      }
+    },
+    {
+      "id": "node-mw7myep8-1s6v1",
+      "type": "wait",
+      "title": "等待",
+      "enabled": true,
+      "props": {
+        "failure": "stop",
+        "duration": 1000
+      }
+    },
+    {
+      "id": "node-mw7myjp3-kqbms",
+      "type": "click",
+      "title": "临安",
+      "enabled": true,
+      "props": {
+        "failure": "stop",
+        "x": 1103,
+        "y": 760,
+        "duration": 50
+      }
+    },
+    {
+      "id": "node-mw7mzmpj-7888i",
+      "type": "repeat",
+      "title": "持续循环",
+      "enabled": true,
+      "props": {
+        "failure": "stop",
+        "mode": "forever",
+        "count": 5,
+        "interval": 300
+      },
+      "children": [
+        {
+          "id": "node-mw7mzsao-p2wt8",
+          "type": "condition",
+          "title": "条件分支",
+          "enabled": true,
+          "props": {
+            "failure": "stop",
+            "conditionKind": "image",
+            "conditionValue": "使用.png",
+            "combine": "single",
+            "conditionThreshold": 0.7
+          },
+          "then": [
+            {
+              "id": "node-mw7n15hd-9fjca",
+              "type": "image",
+              "title": "使用",
+              "enabled": true,
+              "props": {
+                "failure": "stop",
+                "asset": "使用.png",
+                "threshold": 0.9,
+                "timeout": 5000,
+                "poll": 300,
+                "onMatch": "click",
+                "onMiss": "continue",
+                "region": ""
+              }
+            },
+            {
+              "id": "node-mw7n4wjt-7cl0f",
+              "type": "continue",
+              "title": "进入下一轮",
+              "enabled": true,
+              "props": {
+                "failure": "stop"
+              }
+            }
+          ],
+          "else": [
+            {
+              "id": "node-mw7n116c-2s7q0",
+              "type": "break",
+              "title": "退出循环",
+              "enabled": true,
+              "props": {
+                "failure": "stop"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "globalCount": 1
+}

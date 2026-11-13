@@ -1,0 +1,281 @@
+{
+  "schemaVersion": 1,
+  "nodes": [
+    {
+      "id": "node-mw7ooloe-4amv3",
+      "type": "repeat",
+      "title": "持续循环",
+      "enabled": true,
+      "props": {
+        "failure": "stop",
+        "mode": "forever",
+        "count": 5,
+        "interval": 300
+      },
+      "children": [
+        {
+          "id": "node-mw7oon2f-12c6b",
+          "type": "condition",
+          "title": "条件分支",
+          "enabled": true,
+          "props": {
+            "failure": "stop",
+            "conditionKind": "image",
+            "conditionValue": "中心龙头.png",
+            "combine": "single",
+            "conditionThreshold": 0.8
+          },
+          "then": [
+            {
+              "id": "node-mw7oot6v-a4e4i",
+              "type": "image",
+              "title": "找图",
+              "enabled": true,
+              "props": {
+                "failure": "stop",
+                "asset": "中心龙头.png",
+                "threshold": 0.8,
+                "timeout": 5000,
+                "poll": 300,
+                "onMatch": "click",
+                "onMiss": "continue",
+                "region": ""
+              }
+            },
+            {
+              "id": "node-mw7opfwz-z6uq5",
+              "type": "wait",
+              "title": "等待",
+              "enabled": true,
+              "props": {
+                "failure": "stop",
+                "duration": 5000
+              }
+            },
+            {
+              "id": "node-mw7oppeh-jyx74",
+              "type": "break",
+              "title": "退出循环",
+              "enabled": true,
+              "props": {
+                "failure": "stop"
+              }
+            }
+          ],
+          "else": [
+            {
+              "id": "node-mw8znojd-b-4y30i",
+              "type": "sequence",
+              "title": "地图->临安",
+              "enabled": true,
+              "props": {
+                "failure": "stop"
+              },
+              "children": [
+                {
+                  "id": "node-mw8znojd-c-v4cyj",
+                  "type": "click",
+                  "title": "地图",
+                  "enabled": true,
+                  "props": {
+                    "failure": "stop",
+                    "x": 1778,
+                    "y": 24,
+                    "duration": 50
+                  }
+                },
+                {
+                  "id": "node-mw8znojd-d-o3jn7",
+                  "type": "wait",
+                  "title": "等待",
+                  "enabled": true,
+                  "props": {
+                    "failure": "stop",
+                    "duration": 1000
+                  }
+                },
+                {
+                  "id": "node-mw8znojd-e-nnq39",
+                  "type": "click",
+                  "title": "临安",
+                  "enabled": true,
+                  "props": {
+                    "failure": "stop",
+                    "x": 1103,
+                    "y": 760,
+                    "duration": 50
+                  }
+                },
+                {
+                  "id": "node-mw8znojd-f-uew1o",
+                  "type": "wait",
+                  "title": "等待",
+                  "enabled": true,
+                  "props": {
+                    "failure": "stop",
+                    "duration": 1000
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "node-mw7osp9k-i05bq",
+      "type": "click",
+      "title": "调整位置1",
+      "enabled": true,
+      "props": {
+        "failure": "stop",
+        "x": 861,
+        "y": 42,
+        "duration": 50
+      }
+    },
+    {
+      "id": "node-mw7ot61d-90xhz",
+      "type": "wait",
+      "title": "等待",
+      "enabled": true,
+      "props": {
+        "failure": "stop",
+        "duration": 5000
+      }
+    },
+    {
+      "id": "node-mw7ouc1e-2b4c2",
+      "type": "click",
+      "title": "调整位置2",
+      "enabled": true,
+      "props": {
+        "failure": "stop",
+        "x": 687,
+        "y": 64,
+        "duration": 50
+      }
+    },
+    {
+      "id": "node-mw7oup7d-o3mr8",
+      "type": "wait",
+      "title": "等待",
+      "enabled": true,
+      "props": {
+        "failure": "stop",
+        "duration": 4000
+      }
+    },
+    {
+      "id": "node-mw7ovezt-9x0a8",
+      "type": "image",
+      "title": "找图",
+      "enabled": true,
+      "props": {
+        "failure": "stop",
+        "asset": "波斯商人.png",
+        "threshold": 0.8,
+        "timeout": 15000,
+        "poll": 300,
+        "onMatch": "click",
+        "onMiss": "continue",
+        "region": ""
+      }
+    },
+    {
+      "id": "node-mw7oxfae-dzgtf",
+      "type": "wait",
+      "title": "等待",
+      "enabled": true,
+      "props": {
+        "failure": "stop",
+        "duration": 1000
+      }
+    },
+    {
+      "id": "node-mw7oxigr-2x720",
+      "type": "image",
+      "title": "找图",
+      "enabled": true,
+      "props": {
+        "failure": "stop",
+        "asset": "收集瓷器.png",
+        "threshold": 0.8,
+        "timeout": 5000,
+        "poll": 300,
+        "onMatch": "click",
+        "onMiss": "continue",
+        "region": ""
+      }
+    },
+    {
+      "id": "node-mw7oyzzj-376yf",
+      "type": "wait",
+      "title": "等待",
+      "enabled": true,
+      "props": {
+        "failure": "stop",
+        "duration": 1000
+      }
+    },
+    {
+      "id": "node-mw7ozfaj-rzgma",
+      "type": "image",
+      "title": "找图",
+      "enabled": true,
+      "props": {
+        "failure": "stop",
+        "asset": "波斯商人.png",
+        "threshold": 0.8,
+        "timeout": 15000,
+        "poll": 300,
+        "onMatch": "click",
+        "onMiss": "continue",
+        "region": ""
+      }
+    },
+    {
+      "id": "node-mw7p00lk-0mzrn",
+      "type": "repeat",
+      "title": "固定循环",
+      "enabled": true,
+      "props": {
+        "failure": "stop",
+        "mode": "count",
+        "count": 10,
+        "interval": 300
+      },
+      "children": [
+        {
+          "id": "node-mw7p0wjf-xgvpf",
+          "type": "image",
+          "title": "找图",
+          "enabled": true,
+          "props": {
+            "failure": "stop",
+            "asset": "精品提交.png",
+            "threshold": 0.9,
+            "timeout": 5000,
+            "poll": 300,
+            "onMatch": "click",
+            "onMiss": "continue",
+            "region": ""
+          }
+        }
+      ]
+    },
+    {
+      "id": "node-mw7p2dbd-1sd1g",
+      "type": "click",
+      "title": "关闭",
+      "enabled": true,
+      "props": {
+        "failure": "stop",
+        "x": 912,
+        "y": 120,
+        "duration": 50
+      }
+    }
+  ],
+  "globalCount": 1
+}

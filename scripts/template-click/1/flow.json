@@ -1,0 +1,36 @@
+{
+  "schemaVersion": 1,
+  "nodes": [
+    {
+      "id": "node-mw5yl31w-36ixx",
+      "type": "repeat",
+      "title": "持续循环",
+      "enabled": true,
+      "props": {
+        "failure": "stop",
+        "mode": "forever",
+        "count": 5,
+        "interval": 300
+      },
+      "children": [
+        {
+          "id": "node-mw5ylgpc-nxnq6",
+          "type": "image",
+          "title": "找图",
+          "enabled": true,
+          "props": {
+            "failure": "stop",
+            "asset": "通用.png",
+            "threshold": 0.9,
+            "timeout": 5000,
+            "poll": 300,
+            "onMatch": "click",
+            "onMiss": "continue",
+            "region": ""
+          }
+        }
+      ]
+    }
+  ],
+  "globalCount": 1
+}

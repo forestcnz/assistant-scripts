@@ -1,0 +1,307 @@
+{
+  "schemaVersion": 1,
+  "nodes": [
+    {
+      "id": "node-mw8yghfi-1-smwti",
+      "type": "sequence",
+      "title": "地图->临安",
+      "enabled": true,
+      "props": {
+        "failure": "stop"
+      },
+      "children": [
+        {
+          "id": "node-mw7tlqqm-dqf2p",
+          "type": "click",
+          "title": "地图",
+          "enabled": true,
+          "props": {
+            "failure": "stop",
+            "x": 1778,
+            "y": 24,
+            "duration": 50
+          }
+        },
+        {
+          "id": "node-mw7tlrpj-d7bme",
+          "type": "wait",
+          "title": "等待",
+          "enabled": true,
+          "props": {
+            "failure": "stop",
+            "duration": 1000
+          }
+        },
+        {
+          "id": "node-mw7tlso8-lqgg9",
+          "type": "click",
+          "title": "临安",
+          "enabled": true,
+          "props": {
+            "failure": "stop",
+            "x": 1103,
+            "y": 760,
+            "duration": 50
+          }
+        },
+        {
+          "id": "node-mw7tlu07-b7sr5",
+          "type": "wait",
+          "title": "等待",
+          "enabled": true,
+          "props": {
+            "failure": "stop",
+            "duration": 1000
+          }
+        }
+      ]
+    },
+    {
+      "id": "node-mw7tno8w-v4wqg",
+      "type": "click",
+      "title": "家园",
+      "enabled": true,
+      "props": {
+        "failure": "stop",
+        "x": 1837,
+        "y": 543,
+        "duration": 50
+      }
+    },
+    {
+      "id": "node-mw7tomhe-3yyzp",
+      "type": "wait",
+      "title": "等待",
+      "enabled": true,
+      "props": {
+        "failure": "stop",
+        "duration": 1000
+      }
+    },
+    {
+      "id": "node-mw7tonns-bvrq0",
+      "type": "click",
+      "title": "进入家园",
+      "enabled": true,
+      "props": {
+        "failure": "stop",
+        "x": 1475,
+        "y": 925,
+        "duration": 50
+      }
+    },
+    {
+      "id": "node-mw7tp1g7-5a31c",
+      "type": "wait",
+      "title": "等待",
+      "enabled": true,
+      "props": {
+        "failure": "stop",
+        "duration": 1000
+      }
+    },
+    {
+      "id": "node-mw7tpaxl-c9rcr",
+      "type": "click",
+      "title": "家园地图",
+      "enabled": true,
+      "props": {
+        "failure": "stop",
+        "x": 1714,
+        "y": 547,
+        "duration": 50
+      }
+    },
+    {
+      "id": "node-mw7tpr56-5j2eu",
+      "type": "wait",
+      "title": "等待",
+      "enabled": true,
+      "props": {
+        "failure": "stop",
+        "duration": 1000
+      }
+    },
+    {
+      "id": "node-mw7tpta8-kelac",
+      "type": "click",
+      "title": "去后山",
+      "enabled": true,
+      "props": {
+        "failure": "stop",
+        "x": 1516,
+        "y": 642,
+        "duration": 50
+      }
+    },
+    {
+      "id": "node-mw7tqmlq-b3ac1",
+      "type": "wait",
+      "title": "等待",
+      "enabled": true,
+      "props": {
+        "failure": "stop",
+        "duration": 10000
+      }
+    },
+    {
+      "id": "node-mw7tr70e-kj5k3",
+      "type": "image",
+      "title": "送我去资源场",
+      "enabled": true,
+      "props": {
+        "failure": "stop",
+        "asset": "送我去资源场.png",
+        "threshold": 0.7,
+        "timeout": 5000,
+        "poll": 300,
+        "onMatch": "click",
+        "onMiss": "continue",
+        "region": ""
+      }
+    },
+    {
+      "id": "node-mw7tsgf5-kvosb",
+      "type": "wait",
+      "title": "等待",
+      "enabled": true,
+      "props": {
+        "failure": "stop",
+        "duration": 1000
+      }
+    },
+    {
+      "id": "node-mw7tsi3s-6zl8f",
+      "type": "click",
+      "title": "领取",
+      "enabled": true,
+      "props": {
+        "failure": "stop",
+        "x": 1463,
+        "y": 908,
+        "duration": 50
+      }
+    },
+    {
+      "id": "node-mw7twboh-u6gke",
+      "type": "wait",
+      "title": "等待",
+      "enabled": true,
+      "props": {
+        "failure": "stop",
+        "duration": 1000
+      }
+    },
+    {
+      "id": "node-mw7twd6f-wnpks",
+      "type": "click",
+      "title": "石头",
+      "enabled": true,
+      "props": {
+        "failure": "stop",
+        "x": 1117,
+        "y": 915,
+        "duration": 50
+      }
+    },
+    {
+      "id": "node-mw7twu7k-q3dnm",
+      "type": "wait",
+      "title": "等待",
+      "enabled": true,
+      "props": {
+        "failure": "stop",
+        "duration": 3000
+      }
+    },
+    {
+      "id": "node-mw7tx94w-r3oba",
+      "type": "click",
+      "title": "开采",
+      "enabled": true,
+      "props": {
+        "failure": "stop",
+        "x": 1482,
+        "y": 920,
+        "duration": 50
+      }
+    },
+    {
+      "id": "node-mw7tytwt-biknt",
+      "type": "wait",
+      "title": "等待",
+      "enabled": true,
+      "props": {
+        "failure": "stop",
+        "duration": 2000
+      }
+    },
+    {
+      "id": "node-mw7tyya7-hctaw",
+      "type": "click",
+      "title": "关闭",
+      "enabled": true,
+      "props": {
+        "failure": "stop",
+        "x": 1653,
+        "y": 100,
+        "duration": 50
+      }
+    },
+    {
+      "id": "node-mw7tzny3-rq3p5",
+      "type": "wait",
+      "title": "等待",
+      "enabled": true,
+      "props": {
+        "failure": "stop",
+        "duration": 1000
+      }
+    },
+    {
+      "id": "node-mw7tzpji-fjl54",
+      "type": "click",
+      "title": "地图",
+      "enabled": true,
+      "props": {
+        "failure": "stop",
+        "x": 1778,
+        "y": 24,
+        "duration": 50
+      }
+    },
+    {
+      "id": "node-mw7tzrir-kdsa8",
+      "type": "wait",
+      "title": "等待",
+      "enabled": true,
+      "props": {
+        "failure": "stop",
+        "duration": 1000
+      }
+    },
+    {
+      "id": "node-mw7tztl5-yo4qm",
+      "type": "click",
+      "title": "临安",
+      "enabled": true,
+      "props": {
+        "failure": "stop",
+        "x": 1103,
+        "y": 760,
+        "duration": 50
+      }
+    },
+    {
+      "id": "node-mw7tzw80-y8yhk",
+      "type": "wait",
+      "title": "等待",
+      "enabled": true,
+      "props": {
+        "failure": "stop",
+        "duration": 1000
+      }
+    }
+  ],
+  "globalCount": 1
+}

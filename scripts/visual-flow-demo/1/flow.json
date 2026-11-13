@@ -1,9 +1,0 @@
-{
-  "schemaVersion": 1,
-  "globalCount": 1,
-  "nodes": [
-    {"id":"start","type":"log","props":{"text":"流程开始"}},
-    {"id":"pause","type":"wait","props":{"duration":800}},
-    {"id":"finish","type":"log","props":{"text":"流程结束"}}
-  ]
-}

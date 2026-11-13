@@ -1,0 +1,293 @@
+{
+  "schemaVersion": 1,
+  "nodes": [
+    {
+      "id": "node-mw7pbi2r-hn6te",
+      "type": "repeat",
+      "title": "持续循环",
+      "enabled": true,
+      "props": {
+        "failure": "stop",
+        "mode": "forever",
+        "count": 5,
+        "interval": 300
+      },
+      "children": [
+        {
+          "id": "node-mw7pbni8-q98ju",
+          "type": "condition",
+          "title": "条件分支",
+          "enabled": true,
+          "props": {
+            "failure": "stop",
+            "conditionKind": "image",
+            "conditionValue": "中心龙头.png",
+            "combine": "single",
+            "conditionThreshold": 0.7
+          },
+          "then": [
+            {
+              "id": "node-mw7pca3l-k8232",
+              "type": "image",
+              "title": "找图",
+              "enabled": true,
+              "props": {
+                "failure": "stop",
+                "asset": "中心龙头.png",
+                "threshold": 0.8,
+                "timeout": 5000,
+                "poll": 300,
+                "onMatch": "click",
+                "onMiss": "continue",
+                "region": ""
+              }
+            },
+            {
+              "id": "node-mw7pcmy2-s54q4",
+              "type": "wait",
+              "title": "等待",
+              "enabled": true,
+              "props": {
+                "failure": "stop",
+                "duration": 5000
+              }
+            },
+            {
+              "id": "node-mw7pcy1u-jcsxh",
+              "type": "break",
+              "title": "退出循环",
+              "enabled": true,
+              "props": {
+                "failure": "stop"
+              }
+            }
+          ],
+          "else": [
+            {
+              "id": "node-mw8zn2as-6-zv7x2",
+              "type": "sequence",
+              "title": "地图->临安",
+              "enabled": true,
+              "props": {
+                "failure": "stop"
+              },
+              "children": [
+                {
+                  "id": "node-mw8zn2as-7-bfvwk",
+                  "type": "click",
+                  "title": "地图",
+                  "enabled": true,
+                  "props": {
+                    "failure": "stop",
+                    "x": 1778,
+                    "y": 24,
+                    "duration": 50
+                  }
+                },
+                {
+                  "id": "node-mw8zn2as-8-e3f74",
+                  "type": "wait",
+                  "title": "等待",
+                  "enabled": true,
+                  "props": {
+                    "failure": "stop",
+                    "duration": 1000
+                  }
+                },
+                {
+                  "id": "node-mw8zn2as-9-s2tda",
+                  "type": "click",
+                  "title": "临安",
+                  "enabled": true,
+                  "props": {
+                    "failure": "stop",
+                    "x": 1103,
+                    "y": 760,
+                    "duration": 50
+                  }
+                },
+                {
+                  "id": "node-mw8zn2as-a-82fzh",
+                  "type": "wait",
+                  "title": "等待",
+                  "enabled": true,
+                  "props": {
+                    "failure": "stop",
+                    "duration": 1000
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "node-mw7u5taw-po41q",
+      "type": "click",
+      "title": "调整位置1",
+      "enabled": true,
+      "props": {
+        "failure": "stop",
+        "x": 586,
+        "y": 914,
+        "duration": 50
+      }
+    },
+    {
+      "id": "node-mw7u6m5n-z8ohm",
+      "type": "wait",
+      "title": "等待",
+      "enabled": true,
+      "props": {
+        "failure": "stop",
+        "duration": 4000
+      }
+    },
+    {
+      "id": "node-mw7u6q7q-r4ust",
+      "type": "click",
+      "title": "调整2",
+      "enabled": true,
+      "props": {
+        "failure": "stop",
+        "x": 441,
+        "y": 804,
+        "duration": 50
+      }
+    },
+    {
+      "id": "node-mw7u7jx4-csks8",
+      "type": "wait",
+      "title": "等待",
+      "enabled": true,
+      "props": {
+        "failure": "stop",
+        "duration": 4000
+      }
+    },
+    {
+      "id": "node-mw7u860h-u898w",
+      "type": "click",
+      "title": "调整3",
+      "enabled": true,
+      "props": {
+        "failure": "stop",
+        "x": 441,
+        "y": 804,
+        "duration": 50
+      }
+    },
+    {
+      "id": "node-mw7u8z8u-imbru",
+      "type": "wait",
+      "title": "等待",
+      "enabled": true,
+      "props": {
+        "failure": "stop",
+        "duration": 3000
+      }
+    },
+    {
+      "id": "node-mw7u8tkw-akvfh",
+      "type": "click",
+      "title": "调整4",
+      "enabled": true,
+      "props": {
+        "failure": "stop",
+        "x": 441,
+        "y": 804,
+        "duration": 50
+      }
+    },
+    {
+      "id": "node-mw7ub0xi-g0k44",
+      "type": "wait",
+      "title": "等待",
+      "enabled": true,
+      "props": {
+        "failure": "stop",
+        "duration": 3000
+      }
+    },
+    {
+      "id": "node-mw7ub7yw-w64qh",
+      "type": "image",
+      "title": "店小二",
+      "enabled": true,
+      "props": {
+        "failure": "stop",
+        "asset": "店小二.png",
+        "threshold": 0.7,
+        "timeout": 15000,
+        "poll": 300,
+        "onMatch": "click",
+        "onMiss": "continue",
+        "region": ""
+      }
+    },
+    {
+      "id": "node-mw7ux3i9-4zadg",
+      "type": "wait",
+      "title": "等待",
+      "enabled": true,
+      "props": {
+        "failure": "stop",
+        "duration": 2000
+      }
+    },
+    {
+      "id": "node-mw7ue0uu-8x43i",
+      "type": "image",
+      "title": "领取宝图任务",
+      "enabled": true,
+      "props": {
+        "failure": "stop",
+        "asset": "领取宝图任务.png",
+        "threshold": 0.9,
+        "timeout": 5000,
+        "poll": 300,
+        "onMatch": "click",
+        "onMiss": "continue",
+        "region": ""
+      }
+    },
+    {
+      "id": "node-mw7uxbel-46tnd",
+      "type": "wait",
+      "title": "等待",
+      "enabled": true,
+      "props": {
+        "failure": "stop",
+        "duration": 1000
+      }
+    },
+    {
+      "id": "node-mw7ugckm-zrzz4",
+      "type": "text",
+      "title": "开始宝图任务",
+      "enabled": true,
+      "props": {
+        "failure": "stop",
+        "text": "宝图任务",
+        "match": "contains",
+        "timeout": 5000,
+        "poll": 300,
+        "onMatch": "click",
+        "onMiss": "continue",
+        "region": ""
+      }
+    },
+    {
+      "id": "node-mw7ujmpq-9k1bi",
+      "type": "wait",
+      "title": "等待",
+      "enabled": true,
+      "props": {
+        "failure": "stop",
+        "duration": 300000
+      }
+    }
+  ],
+  "globalCount": 1
+}
