@@ -8,9 +8,9 @@
     "无障碍点击",
     "截屏找图"
   ],
-  "changes": "首次上架。",
-  "updatedAt": "2026-11-13",
-  "version": 1,
+  "changes": "使用 2026-11-15 本地最新导出覆盖脚本、流程和运行配置。",
+  "updatedAt": "2026-11-15",
+  "version": 2,
   "minAppVersionCode": 14,
   "targetApp": "神雕侠侣",
   "scriptId": "guild-secret-arts"

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": 1,
+  "nodes": [
+    {
+      "id": "node-mwhtl8zy-6-g7lwv",
+      "type": "repeat",
+      "title": "持续循环",
+      "enabled": true,
+      "props": {
+        "failure": "stop",
+        "mode": "forever",
+        "count": 5,
+        "interval": 300
+      },
+      "children": [
+        {
+          "id": "node-mwhtlcai-7-8onz4",
+          "type": "text",
+          "title": "确定",
+          "enabled": true,
+          "props": {
+            "failure": "stop",
+            "text": "确定",
+            "match": "contains",
+            "timeout": 1,
+            "poll": 300,
+            "onMatch": "click",
+            "onMiss": "continue",
+            "region": "1688, 418, 193, 85"
+          }
+        },
+        {
+          "id": "node-mwhtocxj-8-769bl",
+          "type": "text",
+          "title": "确认",
+          "enabled": true,
+          "props": {
+            "failure": "skip",
+            "text": "确认",
+            "match": "contains",
+            "timeout": 1,
+            "poll": 300,
+            "onMatch": "click",
+            "onMiss": "continue",
+            "region": "1230, 744, 222, 61"
+          }
+        },
+        {
+          "id": "node-mwhuky8o-b-62wc9",
+          "type": "text",
+          "title": "同意",
+          "enabled": true,
+          "props": {
+            "failure": "stop",
+            "text": "同意",
+            "match": "contains",
+            "timeout": 5000,
+            "poll": 300,
+            "onMatch": "recognize",
+            "onMiss": "continue",
+            "region": "467, 283, 933, 524"
+          }
+        }
+      ]
+    }
+  ],
+  "globalCount": 1
+}

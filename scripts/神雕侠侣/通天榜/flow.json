@@ -1,0 +1,236 @@
+{
+  "schemaVersion": 1,
+  "nodes": [
+    {
+      "id": "node-mwfxpctr-1s-8uznd",
+      "type": "repeat",
+      "title": "条件循环",
+      "enabled": true,
+      "props": {
+        "failure": "stop",
+        "mode": "forever",
+        "count": 5,
+        "interval": 300
+      },
+      "children": [
+        {
+          "id": "node-mwfxpeko-1t-tp7bp",
+          "type": "condition",
+          "title": "条件分支",
+          "enabled": true,
+          "props": {
+            "failure": "stop",
+            "conditionKind": "image",
+            "conditionValue": "通天塔入口老头.png",
+            "combine": "single",
+            "conditionThreshold": 0.6
+          },
+          "then": [
+            {
+              "id": "node-mwfxpx34-1u-x34j1",
+              "type": "image",
+              "title": "找图",
+              "enabled": true,
+              "props": {
+                "failure": "stop",
+                "asset": "通天塔入口老头.png",
+                "threshold": 0.6,
+                "timeout": 5000,
+                "poll": 300,
+                "onMatch": "click",
+                "onMiss": "continue",
+                "region": ""
+              }
+            },
+            {
+              "id": "node-mwfxqhg9-1v-0isfp",
+              "type": "wait",
+              "title": "等待",
+              "enabled": true,
+              "props": {
+                "failure": "stop",
+                "duration": 4000
+              }
+            },
+            {
+              "id": "node-mwfxrov8-1w-8t01x",
+              "type": "break",
+              "title": "退出循环",
+              "enabled": true,
+              "props": {
+                "failure": "stop"
+              }
+            }
+          ],
+          "else": [
+            {
+              "id": "node-mwfxo4kh-1p-r67j0",
+              "type": "click",
+              "title": "打开地图",
+              "enabled": true,
+              "props": {
+                "failure": "stop",
+                "x": 1778,
+                "y": 24,
+                "duration": 50
+              }
+            },
+            {
+              "id": "node-mwfxoank-1q-csdg5",
+              "type": "wait",
+              "title": "等待",
+              "enabled": true,
+              "props": {
+                "failure": "stop",
+                "duration": 1000
+              }
+            },
+            {
+              "id": "node-mwfxobmd-1r-3fsan",
+              "type": "click",
+              "title": "前往碧水寒潭",
+              "enabled": true,
+              "props": {
+                "failure": "stop",
+                "x": 571,
+                "y": 621,
+                "duration": 50
+              }
+            },
+            {
+              "id": "node-mwfy0zdz-25-zuyej",
+              "type": "wait",
+              "title": "等待",
+              "enabled": true,
+              "props": {
+                "failure": "stop",
+                "duration": 2000
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "node-mwfxtq4h-1x-wdcp0",
+      "type": "wait",
+      "title": "等待",
+      "enabled": true,
+      "props": {
+        "failure": "stop",
+        "duration": 1000
+      }
+    },
+    {
+      "id": "node-mwfxue5b-1y-itvrc",
+      "type": "waitClick",
+      "title": "等图点击",
+      "enabled": true,
+      "props": {
+        "failure": "stop",
+        "asset": "开启活动.png",
+        "threshold": 0.7,
+        "region": "",
+        "timeout": 0,
+        "poll": 300,
+        "offsetX": 0,
+        "offsetY": 0,
+        "afterWait": 0,
+        "stable": false,
+        "clickRetry": 2,
+        "retryGap": 300,
+        "missLimit": 0,
+        "onMiss": "stop"
+      }
+    },
+    {
+      "id": "node-mwfyc9ex-2b-oeb2z",
+      "type": "wait",
+      "title": "等待",
+      "enabled": true,
+      "props": {
+        "failure": "stop",
+        "duration": 1500
+      }
+    },
+    {
+      "id": "node-mwfxx4i9-21-djclx",
+      "type": "repeat",
+      "title": "持续循环",
+      "enabled": true,
+      "props": {
+        "failure": "stop",
+        "mode": "forever",
+        "count": 5,
+        "interval": 300
+      },
+      "children": [
+        {
+          "id": "node-mwfxvish-1z-j7jvg",
+          "type": "condition",
+          "title": "条件分支",
+          "enabled": true,
+          "props": {
+            "failure": "stop",
+            "conditionKind": "image",
+            "conditionValue": "闯关.png",
+            "combine": "single",
+            "conditionThreshold": 0.7
+          },
+          "then": [
+            {
+              "id": "node-mwfxxf2f-22-jwx5a",
+              "type": "break",
+              "title": "退出循环",
+              "enabled": true,
+              "props": {
+                "failure": "stop"
+              }
+            }
+          ],
+          "else": [
+            {
+              "id": "node-mwfyapum-29-pgg7o",
+              "type": "image",
+              "title": "扫荡",
+              "enabled": true,
+              "props": {
+                "failure": "stop",
+                "asset": "扫荡.png",
+                "threshold": 0.9,
+                "timeout": 5000,
+                "poll": 300,
+                "onMatch": "click",
+                "onMiss": "continue",
+                "region": ""
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "node-mwfxzyw2-23-is1oo",
+      "type": "wait",
+      "title": "等待",
+      "enabled": true,
+      "props": {
+        "failure": "stop",
+        "duration": 1000
+      }
+    },
+    {
+      "id": "node-mwfy005n-24-y28rm",
+      "type": "click",
+      "title": "关闭",
+      "enabled": true,
+      "props": {
+        "failure": "stop",
+        "x": 1653,
+        "y": 94,
+        "duration": 50
+      }
+    }
+  ],
+  "globalCount": 1
+}

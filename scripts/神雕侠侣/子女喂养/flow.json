@@ -1,0 +1,1056 @@
+{
+  "schemaVersion": 1,
+  "nodes": [
+    {
+      "id": "node-mwg2fgak-18-13lmo",
+      "type": "click",
+      "title": "地图",
+      "enabled": true,
+      "props": {
+        "failure": "stop",
+        "x": 1778,
+        "y": 24,
+        "duration": 50
+      }
+    },
+    {
+      "id": "node-mwg2fgak-19-1zqo6",
+      "type": "wait",
+      "title": "等待",
+      "enabled": true,
+      "props": {
+        "failure": "stop",
+        "duration": 1000
+      }
+    },
+    {
+      "id": "node-mwg2fgak-1a-8oevi",
+      "type": "click",
+      "title": "临安",
+      "enabled": true,
+      "props": {
+        "failure": "stop",
+        "x": 1103,
+        "y": 760,
+        "duration": 50
+      }
+    },
+    {
+      "id": "node-mwg2fgak-1b-cr7p4",
+      "type": "wait",
+      "title": "等待",
+      "enabled": true,
+      "props": {
+        "failure": "stop",
+        "duration": 1000
+      }
+    },
+    {
+      "id": "node-mwg2g760-1c-vzi43",
+      "type": "click",
+      "title": "家园",
+      "enabled": true,
+      "props": {
+        "failure": "stop",
+        "x": 1848,
+        "y": 560,
+        "duration": 50
+      }
+    },
+    {
+      "id": "node-mwg2gv71-1d-rhp9r",
+      "type": "wait",
+      "title": "等待",
+      "enabled": true,
+      "props": {
+        "failure": "stop",
+        "duration": 1000
+      }
+    },
+    {
+      "id": "node-mwg2gwmj-1e-aakay",
+      "type": "click",
+      "title": "子女",
+      "enabled": true,
+      "props": {
+        "failure": "stop",
+        "x": 1671,
+        "y": 640,
+        "duration": 50
+      }
+    },
+    {
+      "id": "node-mwg2hr1d-1f-apoh4",
+      "type": "wait",
+      "title": "等待",
+      "enabled": true,
+      "props": {
+        "failure": "stop",
+        "duration": 1000
+      }
+    },
+    {
+      "id": "node-mwg2kvj2-1g-2onti",
+      "type": "click",
+      "title": "喂养tab",
+      "enabled": true,
+      "props": {
+        "failure": "stop",
+        "x": 1170,
+        "y": 135,
+        "duration": 50
+      }
+    },
+    {
+      "id": "node-mwg2lm5v-1h-c50e7",
+      "type": "wait",
+      "title": "等待",
+      "enabled": true,
+      "props": {
+        "failure": "stop",
+        "duration": 1000
+      }
+    },
+    {
+      "id": "node-mwg2lthq-1i-htpw2",
+      "type": "click",
+      "title": "孩子1",
+      "enabled": true,
+      "props": {
+        "failure": "stop",
+        "x": 526,
+        "y": 190,
+        "duration": 50
+      }
+    },
+    {
+      "id": "node-mwg2nyje-1k-gmjcr",
+      "type": "wait",
+      "title": "等待",
+      "enabled": true,
+      "props": {
+        "failure": "stop",
+        "duration": 1000
+      }
+    },
+    {
+      "id": "node-mwg2nppk-1j-d3pkl",
+      "type": "sequence",
+      "title": "养育",
+      "enabled": true,
+      "props": {
+        "failure": "stop"
+      },
+      "children": [
+        {
+          "id": "node-mwg2o2gh-1l-8nmfi",
+          "type": "click",
+          "title": "食物",
+          "enabled": true,
+          "props": {
+            "failure": "stop",
+            "x": 873,
+            "y": 577,
+            "duration": 50
+          }
+        },
+        {
+          "id": "node-mwg2oyn2-1m-irfov",
+          "type": "wait",
+          "title": "等待",
+          "enabled": true,
+          "props": {
+            "failure": "stop",
+            "duration": 1000
+          }
+        },
+        {
+          "id": "node-mwg2p0ke-1n-9dnwy",
+          "type": "click",
+          "title": "养育",
+          "enabled": true,
+          "props": {
+            "failure": "stop",
+            "x": 1455,
+            "y": 662,
+            "duration": 50
+          }
+        },
+        {
+          "id": "node-mwg2plkw-1o-byfho",
+          "type": "wait",
+          "title": "等待",
+          "enabled": true,
+          "props": {
+            "failure": "stop",
+            "duration": 1000
+          }
+        },
+        {
+          "id": "node-mwg2ppa8-1p-dxxol",
+          "type": "condition",
+          "title": "条件分支",
+          "enabled": true,
+          "props": {
+            "failure": "stop",
+            "conditionKind": "image",
+            "conditionValue": "成长上限.png",
+            "combine": "single"
+          },
+          "then": [
+            {
+              "id": "node-mwg2sems-1q-6uban",
+              "type": "image",
+              "title": "找图",
+              "enabled": true,
+              "props": {
+                "failure": "stop",
+                "asset": "成长上限.png",
+                "threshold": 0.9,
+                "timeout": 5000,
+                "poll": 300,
+                "onMatch": "click",
+                "onMiss": "continue",
+                "region": ""
+              }
+            }
+          ],
+          "else": [
+            {
+              "id": "node-mwg2t451-1r-dagvs",
+              "type": "click",
+              "title": "养育",
+              "enabled": true,
+              "props": {
+                "failure": "stop",
+                "x": 1455,
+                "y": 662,
+                "duration": 50
+              }
+            },
+            {
+              "id": "node-mwg3jb9p-3r-98o5x",
+              "type": "wait",
+              "title": "等待",
+              "enabled": true,
+              "props": {
+                "failure": "stop",
+                "duration": 1000
+              }
+            },
+            {
+              "id": "node-mwg2t4ju-1s-izbuf",
+              "type": "click",
+              "title": "养育",
+              "enabled": true,
+              "props": {
+                "failure": "stop",
+                "x": 1455,
+                "y": 662,
+                "duration": 50
+              }
+            }
+          ]
+        },
+        {
+          "id": "node-mwg2tfzb-1t-x967d",
+          "type": "wait",
+          "title": "等待",
+          "enabled": true,
+          "props": {
+            "failure": "stop",
+            "duration": 1000
+          }
+        }
+      ]
+    },
+    {
+      "id": "node-mwg2uhhn-1u-guf8c",
+      "type": "click",
+      "title": "孩子2",
+      "enabled": true,
+      "props": {
+        "failure": "stop",
+        "x": 541,
+        "y": 345,
+        "duration": 50
+      }
+    },
+    {
+      "id": "node-mwg39w2k-2d-enzd1",
+      "type": "wait",
+      "title": "等待",
+      "enabled": true,
+      "props": {
+        "failure": "stop",
+        "duration": 1000
+      }
+    },
+    {
+      "id": "node-mwg39pxp-23-yrbet",
+      "type": "sequence",
+      "title": "养育",
+      "enabled": true,
+      "props": {
+        "failure": "stop"
+      },
+      "children": [
+        {
+          "id": "node-mwg39pxp-24-gelr7",
+          "type": "click",
+          "title": "食物",
+          "enabled": true,
+          "props": {
+            "failure": "stop",
+            "x": 873,
+            "y": 577,
+            "duration": 50
+          }
+        },
+        {
+          "id": "node-mwg39pxp-25-5vq07",
+          "type": "wait",
+          "title": "等待",
+          "enabled": true,
+          "props": {
+            "failure": "stop",
+            "duration": 1000
+          }
+        },
+        {
+          "id": "node-mwg39pxp-26-5vlfs",
+          "type": "click",
+          "title": "养育",
+          "enabled": true,
+          "props": {
+            "failure": "stop",
+            "x": 1455,
+            "y": 662,
+            "duration": 50
+          }
+        },
+        {
+          "id": "node-mwg39pxp-27-smvg7",
+          "type": "wait",
+          "title": "等待",
+          "enabled": true,
+          "props": {
+            "failure": "stop",
+            "duration": 1000
+          }
+        },
+        {
+          "id": "node-mwg39pxp-28-4vtb5",
+          "type": "condition",
+          "title": "条件分支",
+          "enabled": true,
+          "props": {
+            "failure": "stop",
+            "conditionKind": "image",
+            "conditionValue": "成长上限.png",
+            "combine": "single"
+          },
+          "then": [
+            {
+              "id": "node-mwg39pxp-29-vzi0l",
+              "type": "image",
+              "title": "找图",
+              "enabled": true,
+              "props": {
+                "failure": "stop",
+                "asset": "成长上限.png",
+                "threshold": 0.9,
+                "timeout": 5000,
+                "poll": 300,
+                "onMatch": "click",
+                "onMiss": "continue",
+                "region": ""
+              }
+            }
+          ],
+          "else": [
+            {
+              "id": "node-mwg39pxp-2a-xp79t",
+              "type": "click",
+              "title": "养育",
+              "enabled": true,
+              "props": {
+                "failure": "stop",
+                "x": 1455,
+                "y": 662,
+                "duration": 50
+              }
+            },
+            {
+              "id": "node-mwg3dhdq-3m-3awek",
+              "type": "wait",
+              "title": "等待",
+              "enabled": true,
+              "props": {
+                "failure": "stop",
+                "duration": 1000
+              }
+            },
+            {
+              "id": "node-mwg39pxp-2b-xj2fd",
+              "type": "click",
+              "title": "养育",
+              "enabled": true,
+              "props": {
+                "failure": "stop",
+                "x": 1455,
+                "y": 662,
+                "duration": 50
+              }
+            }
+          ]
+        },
+        {
+          "id": "node-mwg39pxp-2c-vkw9l",
+          "type": "wait",
+          "title": "等待",
+          "enabled": true,
+          "props": {
+            "failure": "stop",
+            "duration": 1000
+          }
+        }
+      ]
+    },
+    {
+      "id": "node-mwg2uiiq-1v-4n1vq",
+      "type": "click",
+      "title": "孩子3",
+      "enabled": true,
+      "props": {
+        "failure": "stop",
+        "x": 522,
+        "y": 485,
+        "duration": 50
+      }
+    },
+    {
+      "id": "node-mwg2xkvp-20-wcr33",
+      "type": "wait",
+      "title": "等待",
+      "enabled": true,
+      "props": {
+        "failure": "stop",
+        "duration": 1000
+      }
+    },
+    {
+      "id": "node-mwg3a2vy-2e-sej7p",
+      "type": "sequence",
+      "title": "养育",
+      "enabled": true,
+      "props": {
+        "failure": "stop"
+      },
+      "children": [
+        {
+          "id": "node-mwg3a2vy-2f-c3yuu",
+          "type": "click",
+          "title": "食物",
+          "enabled": true,
+          "props": {
+            "failure": "stop",
+            "x": 873,
+            "y": 577,
+            "duration": 50
+          }
+        },
+        {
+          "id": "node-mwg3a2vy-2g-0bjze",
+          "type": "wait",
+          "title": "等待",
+          "enabled": true,
+          "props": {
+            "failure": "stop",
+            "duration": 1000
+          }
+        },
+        {
+          "id": "node-mwg3a2vy-2h-k5d1g",
+          "type": "click",
+          "title": "养育",
+          "enabled": true,
+          "props": {
+            "failure": "stop",
+            "x": 1455,
+            "y": 662,
+            "duration": 50
+          }
+        },
+        {
+          "id": "node-mwg3a2vy-2i-jf7xh",
+          "type": "wait",
+          "title": "等待",
+          "enabled": true,
+          "props": {
+            "failure": "stop",
+            "duration": 1000
+          }
+        },
+        {
+          "id": "node-mwg3a2vy-2j-pw880",
+          "type": "condition",
+          "title": "条件分支",
+          "enabled": true,
+          "props": {
+            "failure": "stop",
+            "conditionKind": "image",
+            "conditionValue": "成长上限.png",
+            "combine": "single"
+          },
+          "then": [
+            {
+              "id": "node-mwg3a2vy-2k-ioc9q",
+              "type": "image",
+              "title": "找图",
+              "enabled": true,
+              "props": {
+                "failure": "stop",
+                "asset": "成长上限.png",
+                "threshold": 0.9,
+                "timeout": 5000,
+                "poll": 300,
+                "onMatch": "click",
+                "onMiss": "continue",
+                "region": ""
+              }
+            }
+          ],
+          "else": [
+            {
+              "id": "node-mwg3a2vy-2l-45nt6",
+              "type": "click",
+              "title": "养育",
+              "enabled": true,
+              "props": {
+                "failure": "stop",
+                "x": 1455,
+                "y": 662,
+                "duration": 50
+              }
+            },
+            {
+              "id": "node-mwg3dpqe-3n-rvbyx",
+              "type": "wait",
+              "title": "等待",
+              "enabled": true,
+              "props": {
+                "failure": "stop",
+                "duration": 1000
+              }
+            },
+            {
+              "id": "node-mwg3a2vy-2m-6805r",
+              "type": "click",
+              "title": "养育",
+              "enabled": true,
+              "props": {
+                "failure": "stop",
+                "x": 1455,
+                "y": 662,
+                "duration": 50
+              }
+            }
+          ]
+        },
+        {
+          "id": "node-mwg3a2vy-2n-uoda9",
+          "type": "wait",
+          "title": "等待",
+          "enabled": true,
+          "props": {
+            "failure": "stop",
+            "duration": 1000
+          }
+        }
+      ]
+    },
+    {
+      "id": "node-mwg2ujhi-1w-oa3i3",
+      "type": "click",
+      "title": "孩子4",
+      "enabled": true,
+      "props": {
+        "failure": "stop",
+        "x": 538,
+        "y": 644,
+        "duration": 50
+      }
+    },
+    {
+      "id": "node-mwg3agr8-2y-zgy6s",
+      "type": "wait",
+      "title": "等待",
+      "enabled": true,
+      "props": {
+        "failure": "stop",
+        "duration": 1000
+      }
+    },
+    {
+      "id": "node-mwg3aa1t-2o-f6uln",
+      "type": "sequence",
+      "title": "养育",
+      "enabled": true,
+      "props": {
+        "failure": "stop"
+      },
+      "children": [
+        {
+          "id": "node-mwg3aa1t-2p-xsl2r",
+          "type": "click",
+          "title": "食物",
+          "enabled": true,
+          "props": {
+            "failure": "stop",
+            "x": 873,
+            "y": 577,
+            "duration": 50
+          }
+        },
+        {
+          "id": "node-mwg3aa1t-2q-njebi",
+          "type": "wait",
+          "title": "等待",
+          "enabled": true,
+          "props": {
+            "failure": "stop",
+            "duration": 1000
+          }
+        },
+        {
+          "id": "node-mwg3aa1t-2r-y9myr",
+          "type": "click",
+          "title": "养育",
+          "enabled": true,
+          "props": {
+            "failure": "stop",
+            "x": 1455,
+            "y": 662,
+            "duration": 50
+          }
+        },
+        {
+          "id": "node-mwg3aa1t-2s-4fp7p",
+          "type": "wait",
+          "title": "等待",
+          "enabled": true,
+          "props": {
+            "failure": "stop",
+            "duration": 1000
+          }
+        },
+        {
+          "id": "node-mwg3aa1t-2t-salq5",
+          "type": "condition",
+          "title": "条件分支",
+          "enabled": true,
+          "props": {
+            "failure": "stop",
+            "conditionKind": "image",
+            "conditionValue": "成长上限.png",
+            "combine": "single"
+          },
+          "then": [
+            {
+              "id": "node-mwg3aa1t-2u-ci5db",
+              "type": "image",
+              "title": "找图",
+              "enabled": true,
+              "props": {
+                "failure": "stop",
+                "asset": "成长上限.png",
+                "threshold": 0.9,
+                "timeout": 5000,
+                "poll": 300,
+                "onMatch": "click",
+                "onMiss": "continue",
+                "region": ""
+              }
+            }
+          ],
+          "else": [
+            {
+              "id": "node-mwg3aa1t-2v-nnu27",
+              "type": "click",
+              "title": "养育",
+              "enabled": true,
+              "props": {
+                "failure": "stop",
+                "x": 1455,
+                "y": 662,
+                "duration": 50
+              }
+            },
+            {
+              "id": "node-mwg3dwk1-3o-qdg3i",
+              "type": "wait",
+              "title": "等待",
+              "enabled": true,
+              "props": {
+                "failure": "stop",
+                "duration": 1000
+              }
+            },
+            {
+              "id": "node-mwg3aa1t-2w-ul9yl",
+              "type": "click",
+              "title": "养育",
+              "enabled": true,
+              "props": {
+                "failure": "stop",
+                "x": 1455,
+                "y": 662,
+                "duration": 50
+              }
+            }
+          ]
+        },
+        {
+          "id": "node-mwg3aa1t-2x-22agw",
+          "type": "wait",
+          "title": "等待",
+          "enabled": true,
+          "props": {
+            "failure": "stop",
+            "duration": 1000
+          }
+        }
+      ]
+    },
+    {
+      "id": "node-mwg2ukg9-1x-25vgq",
+      "type": "click",
+      "title": "孩子5",
+      "enabled": true,
+      "props": {
+        "failure": "stop",
+        "x": 505,
+        "y": 783,
+        "duration": 50
+      }
+    },
+    {
+      "id": "node-mwg3ak4w-2z-y6fs6",
+      "type": "wait",
+      "title": "等待",
+      "enabled": true,
+      "props": {
+        "failure": "stop",
+        "duration": 1000
+      }
+    },
+    {
+      "id": "node-mwg3azdv-3a-t3kdx",
+      "type": "sequence",
+      "title": "养育",
+      "enabled": true,
+      "props": {
+        "failure": "stop"
+      },
+      "children": [
+        {
+          "id": "node-mwg3azdv-3b-hs6dc",
+          "type": "click",
+          "title": "食物",
+          "enabled": true,
+          "props": {
+            "failure": "stop",
+            "x": 873,
+            "y": 577,
+            "duration": 50
+          }
+        },
+        {
+          "id": "node-mwg3azdv-3c-2k6l9",
+          "type": "wait",
+          "title": "等待",
+          "enabled": true,
+          "props": {
+            "failure": "stop",
+            "duration": 1000
+          }
+        },
+        {
+          "id": "node-mwg3azdv-3d-tilcd",
+          "type": "click",
+          "title": "养育",
+          "enabled": true,
+          "props": {
+            "failure": "stop",
+            "x": 1455,
+            "y": 662,
+            "duration": 50
+          }
+        },
+        {
+          "id": "node-mwg3azdv-3e-vvemm",
+          "type": "wait",
+          "title": "等待",
+          "enabled": true,
+          "props": {
+            "failure": "stop",
+            "duration": 1000
+          }
+        },
+        {
+          "id": "node-mwg3azdv-3f-i9r3e",
+          "type": "condition",
+          "title": "条件分支",
+          "enabled": true,
+          "props": {
+            "failure": "stop",
+            "conditionKind": "image",
+            "conditionValue": "成长上限.png",
+            "combine": "single"
+          },
+          "then": [
+            {
+              "id": "node-mwg3azdv-3g-r3rk8",
+              "type": "image",
+              "title": "找图",
+              "enabled": true,
+              "props": {
+                "failure": "stop",
+                "asset": "成长上限.png",
+                "threshold": 0.9,
+                "timeout": 5000,
+                "poll": 300,
+                "onMatch": "click",
+                "onMiss": "continue",
+                "region": ""
+              }
+            }
+          ],
+          "else": [
+            {
+              "id": "node-mwg3azdv-3h-v66p1",
+              "type": "click",
+              "title": "养育",
+              "enabled": true,
+              "props": {
+                "failure": "stop",
+                "x": 1455,
+                "y": 662,
+                "duration": 50
+              }
+            },
+            {
+              "id": "node-mwg3e8sv-3p-ecbzy",
+              "type": "wait",
+              "title": "等待",
+              "enabled": true,
+              "props": {
+                "failure": "stop",
+                "duration": 1000
+              }
+            },
+            {
+              "id": "node-mwg3azdv-3i-d7hlh",
+              "type": "click",
+              "title": "养育",
+              "enabled": true,
+              "props": {
+                "failure": "stop",
+                "x": 1455,
+                "y": 662,
+                "duration": 50
+              }
+            }
+          ]
+        },
+        {
+          "id": "node-mwg3azdv-3j-o4q7a",
+          "type": "wait",
+          "title": "等待",
+          "enabled": true,
+          "props": {
+            "failure": "stop",
+            "duration": 1000
+          }
+        }
+      ]
+    },
+    {
+      "id": "node-mwg2ulnn-1y-yc8gb",
+      "type": "click",
+      "title": "孩子6",
+      "enabled": true,
+      "props": {
+        "failure": "stop",
+        "x": 541,
+        "y": 898,
+        "duration": 50
+      }
+    },
+    {
+      "id": "node-mwg2xipd-1z-njuge",
+      "type": "wait",
+      "title": "等待",
+      "enabled": true,
+      "props": {
+        "failure": "stop",
+        "duration": 1000
+      }
+    },
+    {
+      "id": "node-mwg3atr4-30-kwt0x",
+      "type": "sequence",
+      "title": "养育",
+      "enabled": true,
+      "props": {
+        "failure": "stop"
+      },
+      "children": [
+        {
+          "id": "node-mwg3atr4-31-1d9li",
+          "type": "click",
+          "title": "食物",
+          "enabled": true,
+          "props": {
+            "failure": "stop",
+            "x": 873,
+            "y": 577,
+            "duration": 50
+          }
+        },
+        {
+          "id": "node-mwg3atr4-32-1u2np",
+          "type": "wait",
+          "title": "等待",
+          "enabled": true,
+          "props": {
+            "failure": "stop",
+            "duration": 1000
+          }
+        },
+        {
+          "id": "node-mwg3atr4-33-0p9oq",
+          "type": "click",
+          "title": "养育",
+          "enabled": true,
+          "props": {
+            "failure": "stop",
+            "x": 1455,
+            "y": 662,
+            "duration": 50
+          }
+        },
+        {
+          "id": "node-mwg3atr4-34-sfz0i",
+          "type": "wait",
+          "title": "等待",
+          "enabled": true,
+          "props": {
+            "failure": "stop",
+            "duration": 1000
+          }
+        },
+        {
+          "id": "node-mwg3atr4-35-5wmrl",
+          "type": "condition",
+          "title": "条件分支",
+          "enabled": true,
+          "props": {
+            "failure": "stop",
+            "conditionKind": "image",
+            "conditionValue": "成长上限.png",
+            "combine": "single"
+          },
+          "then": [
+            {
+              "id": "node-mwg3atr4-36-9gpz6",
+              "type": "image",
+              "title": "找图",
+              "enabled": true,
+              "props": {
+                "failure": "stop",
+                "asset": "成长上限.png",
+                "threshold": 0.9,
+                "timeout": 5000,
+                "poll": 300,
+                "onMatch": "click",
+                "onMiss": "continue",
+                "region": ""
+              }
+            }
+          ],
+          "else": [
+            {
+              "id": "node-mwg3atr4-37-eoclp",
+              "type": "click",
+              "title": "养育",
+              "enabled": true,
+              "props": {
+                "failure": "stop",
+                "x": 1455,
+                "y": 662,
+                "duration": 50
+              }
+            },
+            {
+              "id": "node-mwg3efy0-3q-fk7t8",
+              "type": "wait",
+              "title": "等待",
+              "enabled": true,
+              "props": {
+                "failure": "stop",
+                "duration": 1000
+              }
+            },
+            {
+              "id": "node-mwg3atr4-38-wvjfy",
+              "type": "click",
+              "title": "养育",
+              "enabled": true,
+              "props": {
+                "failure": "stop",
+                "x": 1455,
+                "y": 662,
+                "duration": 50
+              }
+            }
+          ]
+        },
+        {
+          "id": "node-mwg3atr4-39-9nsgj",
+          "type": "wait",
+          "title": "等待",
+          "enabled": true,
+          "props": {
+            "failure": "stop",
+            "duration": 1000
+          }
+        }
+      ]
+    },
+    {
+      "id": "node-mwg3b8ji-3k-y3fpd",
+      "type": "wait",
+      "title": "等待",
+      "enabled": true,
+      "props": {
+        "failure": "stop",
+        "duration": 3000
+      }
+    },
+    {
+      "id": "node-mwg3bdqf-3l-a0q14",
+      "type": "click",
+      "title": "关闭",
+      "enabled": true,
+      "props": {
+        "failure": "stop",
+        "x": 1666,
+        "y": 102,
+        "duration": 50
+      }
+    }
+  ],
+  "globalCount": 1
+}

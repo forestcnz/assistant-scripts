@@ -1,0 +1,10 @@
+{
+  "name": "天下五绝",
+  "desc": "天下五绝 · 1920×1080",
+  "loop": {
+    "count": 1,
+    "interval": 0,
+    "mode": "count",
+    "durationSec": 60
+  }
+}

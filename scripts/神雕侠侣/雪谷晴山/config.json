@@ -1,0 +1,14 @@
+{
+  "name": "雪谷晴山",
+  "desc": "拖拽步骤，编排顺序、循环与条件",
+  "designSize": [
+    1920,
+    1080
+  ],
+  "loop": {
+    "mode": "count",
+    "count": 1,
+    "durationSec": 60,
+    "interval": 0
+  }
+}

@@ -277,16 +277,6 @@
         "onMiss": "continue",
         "region": ""
       }
-    },
-    {
-      "id": "node-mw7ujmpq-9k1bi",
-      "type": "wait",
-      "title": "等待",
-      "enabled": true,
-      "props": {
-        "failure": "stop",
-        "duration": 300000
-      }
     }
   ],
   "globalCount": 1

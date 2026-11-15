@@ -141,7 +141,7 @@
       "enabled": true,
       "props": {
         "failure": "stop",
-        "duration": 3000
+        "duration": 4000
       }
     },
     {
@@ -163,7 +163,7 @@
       "enabled": true,
       "props": {
         "failure": "stop",
-        "duration": 1000
+        "duration": 2000
       }
     },
     {
@@ -173,7 +173,7 @@
       "enabled": true,
       "props": {
         "failure": "stop",
-        "asset": "吏部尚书.png",
+        "asset": "尚书.png",
         "threshold": 0.8,
         "timeout": 10000,
         "poll": 300,

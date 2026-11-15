@@ -265,6 +265,16 @@
       ]
     },
     {
+      "id": "node-mwg0j7da-1-ny6l2",
+      "type": "wait",
+      "title": "等待",
+      "enabled": true,
+      "props": {
+        "failure": "stop",
+        "duration": 1000
+      }
+    },
+    {
       "id": "node-mw7p2dbd-1sd1g",
       "type": "click",
       "title": "关闭",

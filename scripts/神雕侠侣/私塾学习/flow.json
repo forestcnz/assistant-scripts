@@ -1,0 +1,1025 @@
+{
+  "schemaVersion": 1,
+  "nodes": [
+    {
+      "id": "node-mwfzyvrz-4q-9817e",
+      "type": "repeat",
+      "title": "固定循环",
+      "enabled": true,
+      "props": {
+        "failure": "stop",
+        "mode": "forever",
+        "count": 5,
+        "interval": 300
+      },
+      "children": [
+        {
+          "id": "node-mwfzz7jb-4r-gejk0",
+          "type": "condition",
+          "title": "条件分支",
+          "enabled": true,
+          "props": {
+            "failure": "stop",
+            "conditionKind": "image",
+            "conditionValue": "夫子.png",
+            "combine": "single",
+            "conditionThreshold": 0.7
+          },
+          "then": [
+            {
+              "id": "node-mwg06oeu-4w-g5x11",
+              "type": "wait",
+              "title": "等待",
+              "enabled": true,
+              "props": {
+                "failure": "stop",
+                "duration": 1000
+              }
+            },
+            {
+              "id": "node-mwg00nj9-4s-dn7yp",
+              "type": "image",
+              "title": "找图",
+              "enabled": true,
+              "props": {
+                "failure": "stop",
+                "asset": "夫子.png",
+                "threshold": 0.7,
+                "timeout": 5000,
+                "poll": 300,
+                "onMatch": "click",
+                "onMiss": "continue",
+                "region": ""
+              }
+            },
+            {
+              "id": "node-mwg017ei-4t-0iktz",
+              "type": "wait",
+              "title": "等待",
+              "enabled": true,
+              "props": {
+                "failure": "stop",
+                "duration": 1000
+              }
+            },
+            {
+              "id": "node-mwg01nx3-4v-ri21v",
+              "type": "break",
+              "title": "退出循环",
+              "enabled": true,
+              "props": {
+                "failure": "stop"
+              }
+            }
+          ],
+          "else": [
+            {
+              "id": "node-mwg019j6-4u-lnzob",
+              "type": "wait",
+              "title": "等待",
+              "enabled": true,
+              "props": {
+                "failure": "stop",
+                "duration": 1000
+              }
+            },
+            {
+              "id": "node-mwfzu17n-4b-rqnmg",
+              "type": "repeat",
+              "title": "临安中心",
+              "enabled": true,
+              "props": {
+                "failure": "stop",
+                "mode": "forever",
+                "count": 5,
+                "interval": 300
+              },
+              "children": [
+                {
+                  "id": "node-mwfzu17n-4c-8s5ps",
+                  "type": "condition",
+                  "title": "条件分支",
+                  "enabled": true,
+                  "props": {
+                    "failure": "stop",
+                    "conditionKind": "image",
+                    "conditionValue": "中心龙头.png",
+                    "combine": "single",
+                    "conditionThreshold": 0.8
+                  },
+                  "then": [
+                    {
+                      "id": "node-mwfzu17n-4d-zehzz",
+                      "type": "image",
+                      "title": "找图",
+                      "enabled": true,
+                      "props": {
+                        "failure": "stop",
+                        "asset": "中心龙头.png",
+                        "threshold": 0.8,
+                        "timeout": 5000,
+                        "poll": 300,
+                        "onMatch": "click",
+                        "onMiss": "continue",
+                        "region": ""
+                      }
+                    },
+                    {
+                      "id": "node-mwfzu17n-4e-3mhpb",
+                      "type": "wait",
+                      "title": "等待",
+                      "enabled": true,
+                      "props": {
+                        "failure": "stop",
+                        "duration": 4000
+                      }
+                    },
+                    {
+                      "id": "node-mwfzu17n-4f-rkbmc",
+                      "type": "break",
+                      "title": "退出循环",
+                      "enabled": true,
+                      "props": {
+                        "failure": "stop"
+                      }
+                    }
+                  ],
+                  "else": [
+                    {
+                      "id": "node-mwfzu17n-4g-ru3qt",
+                      "type": "click",
+                      "title": "打开地图",
+                      "enabled": true,
+                      "props": {
+                        "failure": "stop",
+                        "x": 1778,
+                        "y": 24,
+                        "duration": 50
+                      }
+                    },
+                    {
+                      "id": "node-mwfzu17n-4h-u74bf",
+                      "type": "wait",
+                      "title": "等待",
+                      "enabled": true,
+                      "props": {
+                        "failure": "stop",
+                        "duration": 1000
+                      }
+                    },
+                    {
+                      "id": "node-mwfzu17n-4i-g7k0h",
+                      "type": "click",
+                      "title": "点击临安",
+                      "enabled": true,
+                      "props": {
+                        "failure": "stop",
+                        "x": 1103,
+                        "y": 760,
+                        "duration": 50
+                      }
+                    },
+                    {
+                      "id": "node-mwfzu17n-4j-fe4hx",
+                      "type": "wait",
+                      "title": "等待",
+                      "enabled": true,
+                      "props": {
+                        "failure": "stop",
+                        "duration": 1000
+                      }
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "node-mwfzv7rb-4l-q7pwo",
+              "type": "sequence",
+              "title": "夫子",
+              "enabled": true,
+              "props": {
+                "failure": "stop"
+              },
+              "children": [
+                {
+                  "id": "node-mwfzw7oh-4m-m6gxw",
+                  "type": "wait",
+                  "title": "等待",
+                  "enabled": true,
+                  "props": {
+                    "failure": "stop",
+                    "duration": 1000
+                  }
+                },
+                {
+                  "id": "node-mwfzw99s-4n-kzthj",
+                  "type": "click",
+                  "title": "click(973, 47);",
+                  "enabled": true,
+                  "props": {
+                    "failure": "stop",
+                    "x": 973,
+                    "y": 47,
+                    "duration": 50
+                  }
+                },
+                {
+                  "id": "node-mwfzxcd3-4o-7nuin",
+                  "type": "wait",
+                  "title": "等待",
+                  "enabled": true,
+                  "props": {
+                    "failure": "stop",
+                    "duration": 3000
+                  }
+                },
+                {
+                  "id": "node-mwfzxgxi-4p-73tp2",
+                  "type": "click",
+                  "title": "click(1363, 112);",
+                  "enabled": true,
+                  "props": {
+                    "failure": "stop",
+                    "x": 1363,
+                    "y": 112,
+                    "duration": 50
+                  }
+                },
+                {
+                  "id": "node-mwg08qoh-4x-uuv99",
+                  "type": "wait",
+                  "title": "等待",
+                  "enabled": true,
+                  "props": {
+                    "failure": "stop",
+                    "duration": 2000
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "node-mwfzb4mx-2f-g7ns2",
+      "type": "waitClick",
+      "title": "等图点击",
+      "enabled": true,
+      "props": {
+        "failure": "stop",
+        "asset": "私塾学习.png",
+        "threshold": 0.9,
+        "region": "",
+        "timeout": 0,
+        "poll": 300,
+        "offsetX": 0,
+        "offsetY": 0,
+        "afterWait": 0,
+        "stable": false,
+        "clickRetry": 2,
+        "retryGap": 300,
+        "missLimit": 0,
+        "onMiss": "stop"
+      }
+    },
+    {
+      "id": "node-mwfzd04s-2j-9el9a",
+      "type": "wait",
+      "title": "等待",
+      "enabled": true,
+      "props": {
+        "failure": "stop",
+        "duration": 1000
+      }
+    },
+    {
+      "id": "node-mwfzc6v2-2g-e8feq",
+      "type": "sequence",
+      "title": "学习",
+      "enabled": true,
+      "props": {
+        "failure": "stop"
+      },
+      "children": [
+        {
+          "id": "node-mwfzctle-2h-4mtao",
+          "type": "click",
+          "title": "领取",
+          "enabled": true,
+          "props": {
+            "failure": "stop",
+            "x": 1430,
+            "y": 321,
+            "duration": 50
+          }
+        },
+        {
+          "id": "node-mwfzcvk0-2i-pmx2u",
+          "type": "wait",
+          "title": "等待",
+          "enabled": true,
+          "props": {
+            "failure": "stop",
+            "duration": 1000
+          }
+        },
+        {
+          "id": "node-mwfzdzdt-2k-lwlxm",
+          "type": "click",
+          "title": "学习",
+          "enabled": true,
+          "props": {
+            "failure": "stop",
+            "x": 1430,
+            "y": 321,
+            "duration": 50
+          }
+        },
+        {
+          "id": "node-mwfze1yi-2l-lsd6z",
+          "type": "wait",
+          "title": "等待",
+          "enabled": true,
+          "props": {
+            "failure": "stop",
+            "duration": 1000
+          }
+        },
+        {
+          "id": "node-mwfzepja-2m-kt1rf",
+          "type": "click",
+          "title": "最大",
+          "enabled": true,
+          "props": {
+            "failure": "stop",
+            "x": 1094,
+            "y": 516,
+            "duration": 50
+          }
+        },
+        {
+          "id": "node-mwfzezja-2n-vk922",
+          "type": "wait",
+          "title": "等待",
+          "enabled": true,
+          "props": {
+            "failure": "stop",
+            "duration": 1000
+          }
+        },
+        {
+          "id": "node-mwfzfbx6-2o-fkpfm",
+          "type": "click",
+          "title": "确定",
+          "enabled": true,
+          "props": {
+            "failure": "stop",
+            "x": 960,
+            "y": 747,
+            "duration": 50
+          }
+        },
+        {
+          "id": "node-mwfzfdo2-2p-ccdeb",
+          "type": "wait",
+          "title": "等待",
+          "enabled": true,
+          "props": {
+            "failure": "stop",
+            "duration": 1000
+          }
+        }
+      ]
+    },
+    {
+      "id": "node-mwfzhv09-2q-3o98c",
+      "type": "click",
+      "title": "2",
+      "enabled": true,
+      "props": {
+        "failure": "stop",
+        "x": 914,
+        "y": 824,
+        "duration": 50
+      }
+    },
+    {
+      "id": "node-mwfzjcvv-2w-9ny4i",
+      "type": "wait",
+      "title": "等待",
+      "enabled": true,
+      "props": {
+        "failure": "stop",
+        "duration": 1000
+      }
+    },
+    {
+      "id": "node-mwfzoyek-30-jyv2u",
+      "type": "sequence",
+      "title": "学习",
+      "enabled": true,
+      "props": {
+        "failure": "stop"
+      },
+      "children": [
+        {
+          "id": "node-mwfzoyek-31-8mvqb",
+          "type": "click",
+          "title": "领取",
+          "enabled": true,
+          "props": {
+            "failure": "stop",
+            "x": 1430,
+            "y": 321,
+            "duration": 50
+          }
+        },
+        {
+          "id": "node-mwfzoyek-32-s1dq4",
+          "type": "wait",
+          "title": "等待",
+          "enabled": true,
+          "props": {
+            "failure": "stop",
+            "duration": 1000
+          }
+        },
+        {
+          "id": "node-mwfzoyek-33-fi44q",
+          "type": "click",
+          "title": "学习",
+          "enabled": true,
+          "props": {
+            "failure": "stop",
+            "x": 1430,
+            "y": 321,
+            "duration": 50
+          }
+        },
+        {
+          "id": "node-mwfzoyek-34-73msz",
+          "type": "wait",
+          "title": "等待",
+          "enabled": true,
+          "props": {
+            "failure": "stop",
+            "duration": 1000
+          }
+        },
+        {
+          "id": "node-mwfzoyek-35-piujw",
+          "type": "click",
+          "title": "最大",
+          "enabled": true,
+          "props": {
+            "failure": "stop",
+            "x": 1094,
+            "y": 516,
+            "duration": 50
+          }
+        },
+        {
+          "id": "node-mwfzoyek-36-svxoy",
+          "type": "wait",
+          "title": "等待",
+          "enabled": true,
+          "props": {
+            "failure": "stop",
+            "duration": 1000
+          }
+        },
+        {
+          "id": "node-mwfzoyek-37-ufxph",
+          "type": "click",
+          "title": "确定",
+          "enabled": true,
+          "props": {
+            "failure": "stop",
+            "x": 960,
+            "y": 747,
+            "duration": 50
+          }
+        },
+        {
+          "id": "node-mwfzoyek-38-4wref",
+          "type": "wait",
+          "title": "等待",
+          "enabled": true,
+          "props": {
+            "failure": "stop",
+            "duration": 1000
+          }
+        }
+      ]
+    },
+    {
+      "id": "node-mwfzi7ia-2r-vbqmd",
+      "type": "click",
+      "title": "3",
+      "enabled": true,
+      "props": {
+        "failure": "stop",
+        "x": 1050,
+        "y": 831,
+        "duration": 50
+      }
+    },
+    {
+      "id": "node-mwfzjeov-2x-33bbl",
+      "type": "wait",
+      "title": "等待",
+      "enabled": true,
+      "props": {
+        "failure": "stop",
+        "duration": 1000
+      }
+    },
+    {
+      "id": "node-mwfzp4xa-39-psjz5",
+      "type": "sequence",
+      "title": "学习",
+      "enabled": true,
+      "props": {
+        "failure": "stop"
+      },
+      "children": [
+        {
+          "id": "node-mwfzp4xa-3a-dnsso",
+          "type": "click",
+          "title": "领取",
+          "enabled": true,
+          "props": {
+            "failure": "stop",
+            "x": 1430,
+            "y": 321,
+            "duration": 50
+          }
+        },
+        {
+          "id": "node-mwfzp4xa-3b-bednr",
+          "type": "wait",
+          "title": "等待",
+          "enabled": true,
+          "props": {
+            "failure": "stop",
+            "duration": 1000
+          }
+        },
+        {
+          "id": "node-mwfzp4xa-3c-b1ha3",
+          "type": "click",
+          "title": "学习",
+          "enabled": true,
+          "props": {
+            "failure": "stop",
+            "x": 1430,
+            "y": 321,
+            "duration": 50
+          }
+        },
+        {
+          "id": "node-mwfzp4xa-3d-85udy",
+          "type": "wait",
+          "title": "等待",
+          "enabled": true,
+          "props": {
+            "failure": "stop",
+            "duration": 1000
+          }
+        },
+        {
+          "id": "node-mwfzp4xa-3e-wk1jx",
+          "type": "click",
+          "title": "最大",
+          "enabled": true,
+          "props": {
+            "failure": "stop",
+            "x": 1094,
+            "y": 516,
+            "duration": 50
+          }
+        },
+        {
+          "id": "node-mwfzp4xa-3f-wqnwx",
+          "type": "wait",
+          "title": "等待",
+          "enabled": true,
+          "props": {
+            "failure": "stop",
+            "duration": 1000
+          }
+        },
+        {
+          "id": "node-mwfzp4xa-3g-xyd1y",
+          "type": "click",
+          "title": "确定",
+          "enabled": true,
+          "props": {
+            "failure": "stop",
+            "x": 960,
+            "y": 747,
+            "duration": 50
+          }
+        },
+        {
+          "id": "node-mwfzp4xa-3h-27gys",
+          "type": "wait",
+          "title": "等待",
+          "enabled": true,
+          "props": {
+            "failure": "stop",
+            "duration": 1000
+          }
+        }
+      ]
+    },
+    {
+      "id": "node-mwfziqin-2s-dwwhi",
+      "type": "click",
+      "title": "4",
+      "enabled": true,
+      "props": {
+        "failure": "stop",
+        "x": 1168,
+        "y": 831,
+        "duration": 50
+      }
+    },
+    {
+      "id": "node-mwfzjga6-2y-03uqh",
+      "type": "wait",
+      "title": "等待",
+      "enabled": true,
+      "props": {
+        "failure": "stop",
+        "duration": 1000
+      }
+    },
+    {
+      "id": "node-mwfzq69b-3r-nohid",
+      "type": "sequence",
+      "title": "学习",
+      "enabled": true,
+      "props": {
+        "failure": "stop"
+      },
+      "children": [
+        {
+          "id": "node-mwfzq69b-3s-0wyfl",
+          "type": "click",
+          "title": "领取",
+          "enabled": true,
+          "props": {
+            "failure": "stop",
+            "x": 1430,
+            "y": 321,
+            "duration": 50
+          }
+        },
+        {
+          "id": "node-mwfzq69b-3t-lqpyd",
+          "type": "wait",
+          "title": "等待",
+          "enabled": true,
+          "props": {
+            "failure": "stop",
+            "duration": 1000
+          }
+        },
+        {
+          "id": "node-mwfzq69b-3u-j90jt",
+          "type": "click",
+          "title": "学习",
+          "enabled": true,
+          "props": {
+            "failure": "stop",
+            "x": 1430,
+            "y": 321,
+            "duration": 50
+          }
+        },
+        {
+          "id": "node-mwfzq69b-3v-vij6k",
+          "type": "wait",
+          "title": "等待",
+          "enabled": true,
+          "props": {
+            "failure": "stop",
+            "duration": 1000
+          }
+        },
+        {
+          "id": "node-mwfzq69b-3w-pqti4",
+          "type": "click",
+          "title": "最大",
+          "enabled": true,
+          "props": {
+            "failure": "stop",
+            "x": 1094,
+            "y": 516,
+            "duration": 50
+          }
+        },
+        {
+          "id": "node-mwfzq69b-3x-oxb3l",
+          "type": "wait",
+          "title": "等待",
+          "enabled": true,
+          "props": {
+            "failure": "stop",
+            "duration": 1000
+          }
+        },
+        {
+          "id": "node-mwfzq69b-3y-hqdw1",
+          "type": "click",
+          "title": "确定",
+          "enabled": true,
+          "props": {
+            "failure": "stop",
+            "x": 960,
+            "y": 747,
+            "duration": 50
+          }
+        },
+        {
+          "id": "node-mwfzq69b-3z-4f4ay",
+          "type": "wait",
+          "title": "等待",
+          "enabled": true,
+          "props": {
+            "failure": "stop",
+            "duration": 1000
+          }
+        }
+      ]
+    },
+    {
+      "id": "node-mwfziqw6-2t-jnk8i",
+      "type": "click",
+      "title": "5",
+      "enabled": true,
+      "props": {
+        "failure": "stop",
+        "x": 1317,
+        "y": 831,
+        "duration": 50
+      }
+    },
+    {
+      "id": "node-mwfzjj7d-2z-usn9p",
+      "type": "wait",
+      "title": "等待",
+      "enabled": true,
+      "props": {
+        "failure": "stop",
+        "duration": 1000
+      }
+    },
+    {
+      "id": "node-mwfzprel-3i-ndttz",
+      "type": "sequence",
+      "title": "学习",
+      "enabled": true,
+      "props": {
+        "failure": "stop"
+      },
+      "children": [
+        {
+          "id": "node-mwfzprel-3j-6k7jz",
+          "type": "click",
+          "title": "领取",
+          "enabled": true,
+          "props": {
+            "failure": "stop",
+            "x": 1430,
+            "y": 321,
+            "duration": 50
+          }
+        },
+        {
+          "id": "node-mwfzprel-3k-fd4yx",
+          "type": "wait",
+          "title": "等待",
+          "enabled": true,
+          "props": {
+            "failure": "stop",
+            "duration": 1000
+          }
+        },
+        {
+          "id": "node-mwfzprel-3l-oa1a4",
+          "type": "click",
+          "title": "学习",
+          "enabled": true,
+          "props": {
+            "failure": "stop",
+            "x": 1430,
+            "y": 321,
+            "duration": 50
+          }
+        },
+        {
+          "id": "node-mwfzprel-3m-8v4jt",
+          "type": "wait",
+          "title": "等待",
+          "enabled": true,
+          "props": {
+            "failure": "stop",
+            "duration": 1000
+          }
+        },
+        {
+          "id": "node-mwfzprel-3n-xaoyg",
+          "type": "click",
+          "title": "最大",
+          "enabled": true,
+          "props": {
+            "failure": "stop",
+            "x": 1094,
+            "y": 516,
+            "duration": 50
+          }
+        },
+        {
+          "id": "node-mwfzprel-3o-0ags9",
+          "type": "wait",
+          "title": "等待",
+          "enabled": true,
+          "props": {
+            "failure": "stop",
+            "duration": 1000
+          }
+        },
+        {
+          "id": "node-mwfzprel-3p-eoa7i",
+          "type": "click",
+          "title": "确定",
+          "enabled": true,
+          "props": {
+            "failure": "stop",
+            "x": 960,
+            "y": 747,
+            "duration": 50
+          }
+        },
+        {
+          "id": "node-mwfzprel-3q-jprbn",
+          "type": "wait",
+          "title": "等待",
+          "enabled": true,
+          "props": {
+            "failure": "stop",
+            "duration": 1000
+          }
+        }
+      ]
+    },
+    {
+      "id": "node-mwfzirdg-2u-y646x",
+      "type": "click",
+      "title": "6",
+      "enabled": true,
+      "props": {
+        "failure": "stop",
+        "x": 1455,
+        "y": 831,
+        "duration": 50
+      }
+    },
+    {
+      "id": "node-mwfzjak3-2v-6z20m",
+      "type": "wait",
+      "title": "等待",
+      "enabled": true,
+      "props": {
+        "failure": "stop",
+        "duration": 1000
+      }
+    },
+    {
+      "id": "node-mwfzqaul-40-5h37c",
+      "type": "sequence",
+      "title": "学习",
+      "enabled": true,
+      "props": {
+        "failure": "stop"
+      },
+      "children": [
+        {
+          "id": "node-mwfzqaul-41-86nkw",
+          "type": "click",
+          "title": "领取",
+          "enabled": true,
+          "props": {
+            "failure": "stop",
+            "x": 1430,
+            "y": 321,
+            "duration": 50
+          }
+        },
+        {
+          "id": "node-mwfzqaul-42-7i3mn",
+          "type": "wait",
+          "title": "等待",
+          "enabled": true,
+          "props": {
+            "failure": "stop",
+            "duration": 1000
+          }
+        },
+        {
+          "id": "node-mwfzqaul-43-fzubm",
+          "type": "click",
+          "title": "学习",
+          "enabled": true,
+          "props": {
+            "failure": "stop",
+            "x": 1430,
+            "y": 321,
+            "duration": 50
+          }
+        },
+        {
+          "id": "node-mwfzqaul-44-tiikf",
+          "type": "wait",
+          "title": "等待",
+          "enabled": true,
+          "props": {
+            "failure": "stop",
+            "duration": 1000
+          }
+        },
+        {
+          "id": "node-mwfzqaul-45-plw8s",
+          "type": "click",
+          "title": "最大",
+          "enabled": true,
+          "props": {
+            "failure": "stop",
+            "x": 1094,
+            "y": 516,
+            "duration": 50
+          }
+        },
+        {
+          "id": "node-mwfzqaul-46-mbwtp",
+          "type": "wait",
+          "title": "等待",
+          "enabled": true,
+          "props": {
+            "failure": "stop",
+            "duration": 1000
+          }
+        },
+        {
+          "id": "node-mwfzqaul-47-ta88e",
+          "type": "click",
+          "title": "确定",
+          "enabled": true,
+          "props": {
+            "failure": "stop",
+            "x": 960,
+            "y": 747,
+            "duration": 50
+          }
+        },
+        {
+          "id": "node-mwfzqaul-48-i6l36",
+          "type": "wait",
+          "title": "等待",
+          "enabled": true,
+          "props": {
+            "failure": "stop",
+            "duration": 1000
+          }
+        }
+      ]
+    },
+    {
+      "id": "node-mwfzs8r3-4a-noix4",
+      "type": "wait",
+      "title": "等待",
+      "enabled": true,
+      "props": {
+        "failure": "stop",
+        "duration": 1000
+      }
+    },
+    {
+      "id": "node-mwfzs3k9-49-w8xrp",
+      "type": "click",
+      "title": "关闭",
+      "enabled": true,
+      "props": {
+        "failure": "stop",
+        "x": 1661,
+        "y": 95,
+        "duration": 50
+      }
+    }
+  ],
+  "globalCount": 1
+}

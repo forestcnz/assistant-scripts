@@ -1,0 +1,658 @@
+{
+  "schemaVersion": 1,
+  "nodes": [
+    {
+      "id": "node-mwfujwex-j-3c96p",
+      "type": "repeat",
+      "title": "持续循环",
+      "enabled": true,
+      "props": {
+        "failure": "stop",
+        "mode": "forever",
+        "count": 5,
+        "interval": 300
+      },
+      "children": [
+        {
+          "id": "node-mwfujzpn-k-v0p1g",
+          "type": "condition",
+          "title": "条件分支",
+          "enabled": true,
+          "props": {
+            "failure": "stop",
+            "conditionKind": "image",
+            "conditionValue": "云中易.png",
+            "combine": "single",
+            "conditionThreshold": 0.7
+          },
+          "then": [
+            {
+              "id": "node-mwfukkyw-l-q1njo",
+              "type": "image",
+              "title": "找图",
+              "enabled": true,
+              "props": {
+                "failure": "stop",
+                "asset": "云中易.png",
+                "threshold": 0.9,
+                "timeout": 5000,
+                "poll": 300,
+                "onMatch": "click",
+                "onMiss": "continue",
+                "region": ""
+              }
+            },
+            {
+              "id": "node-mwfukzj3-m-3j2ou",
+              "type": "wait",
+              "title": "等待",
+              "enabled": true,
+              "props": {
+                "failure": "stop",
+                "duration": 3000
+              }
+            },
+            {
+              "id": "node-mwful9f4-n-05f9g",
+              "type": "break",
+              "title": "退出循环",
+              "enabled": true,
+              "props": {
+                "failure": "stop"
+              }
+            }
+          ],
+          "else": [
+            {
+              "id": "node-mwfuldjs-o-1sful",
+              "type": "click",
+              "title": "打开地图",
+              "enabled": true,
+              "props": {
+                "failure": "stop",
+                "x": 1778,
+                "y": 24,
+                "duration": 50
+              }
+            },
+            {
+              "id": "node-mwfuldjt-p-yqa3y",
+              "type": "wait",
+              "title": "等待",
+              "enabled": true,
+              "props": {
+                "failure": "stop",
+                "duration": 1000
+              }
+            },
+            {
+              "id": "node-mwfuldjt-q-60b3c",
+              "type": "click",
+              "title": "点击临安 click(1103, 760)",
+              "enabled": true,
+              "props": {
+                "failure": "stop",
+                "x": 1103,
+                "y": 760,
+                "duration": 50
+              }
+            },
+            {
+              "id": "node-mwfuldjt-r-3cb6f",
+              "type": "wait",
+              "title": "等待",
+              "enabled": true,
+              "props": {
+                "failure": "stop",
+                "duration": 1000
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "node-mwfuq22f-s-cgp4j",
+      "type": "waitClick",
+      "title": "进入恩仇录",
+      "enabled": true,
+      "props": {
+        "failure": "stop",
+        "asset": "进入恩仇录.png",
+        "threshold": 0.8,
+        "region": "",
+        "timeout": 10000,
+        "poll": 300,
+        "offsetX": 0,
+        "offsetY": 0,
+        "afterWait": 0,
+        "stable": false,
+        "clickRetry": 2,
+        "retryGap": 300,
+        "missLimit": 0,
+        "onMiss": "stop"
+      }
+    },
+    {
+      "id": "node-mwfus2hc-u-6y332",
+      "type": "wait",
+      "title": "等待",
+      "enabled": true,
+      "props": {
+        "failure": "stop",
+        "duration": 1000
+      }
+    },
+    {
+      "id": "node-mwfur5t4-t-zqzyk",
+      "type": "condition",
+      "title": "出现排名奖励",
+      "enabled": true,
+      "props": {
+        "failure": "stop",
+        "conditionKind": "image",
+        "conditionValue": "恩仇录排名奖励.png",
+        "combine": "single",
+        "conditionThreshold": 0.8
+      },
+      "then": [
+        {
+          "id": "node-mwfuscqy-v-6yagu",
+          "type": "waitClick",
+          "title": "领取排名奖励",
+          "enabled": true,
+          "props": {
+            "failure": "stop",
+            "asset": "领取恩仇 排名奖励.png",
+            "threshold": 0.9,
+            "region": "",
+            "timeout": 10000,
+            "poll": 300,
+            "offsetX": 0,
+            "offsetY": 0,
+            "afterWait": 0,
+            "stable": false,
+            "clickRetry": 2,
+            "retryGap": 300,
+            "missLimit": 0,
+            "onMiss": "stop"
+          }
+        },
+        {
+          "id": "node-mwfutgno-x-9ww5e",
+          "type": "wait",
+          "title": "等待",
+          "enabled": true,
+          "props": {
+            "failure": "stop",
+            "duration": 1000
+          }
+        }
+      ],
+      "else": [
+        {
+          "id": "node-mwfut5yn-w-ubhc0",
+          "type": "wait",
+          "title": "等待",
+          "enabled": true,
+          "props": {
+            "failure": "stop",
+            "duration": 1000
+          }
+        }
+      ]
+    },
+    {
+      "id": "node-mwfuul0h-y-swbmc",
+      "type": "waitClick",
+      "title": "等图点击",
+      "enabled": true,
+      "props": {
+        "failure": "stop",
+        "asset": "快速通关.png",
+        "threshold": 0.9,
+        "region": "",
+        "timeout": 10000,
+        "poll": 300,
+        "offsetX": 0,
+        "offsetY": 0,
+        "afterWait": 0,
+        "stable": false,
+        "clickRetry": 2,
+        "retryGap": 300,
+        "missLimit": 0,
+        "onMiss": "stop"
+      }
+    },
+    {
+      "id": "node-mwfuv6x0-z-mjt62",
+      "type": "wait",
+      "title": "等待",
+      "enabled": true,
+      "props": {
+        "failure": "stop",
+        "duration": 1000
+      }
+    },
+    {
+      "id": "node-mwfuw77k-10-29rlf",
+      "type": "waitClick",
+      "title": "免费通关",
+      "enabled": true,
+      "props": {
+        "failure": "stop",
+        "asset": "免费通关.png",
+        "threshold": 0.9,
+        "region": "",
+        "timeout": 10000,
+        "poll": 300,
+        "offsetX": 0,
+        "offsetY": 0,
+        "afterWait": 0,
+        "stable": false,
+        "clickRetry": 2,
+        "retryGap": 300,
+        "missLimit": 0,
+        "onMiss": "stop"
+      }
+    },
+    {
+      "id": "node-mwfuwy32-11-amp5z",
+      "type": "wait",
+      "title": "等待",
+      "enabled": true,
+      "props": {
+        "failure": "stop",
+        "duration": 1000
+      }
+    },
+    {
+      "id": "node-mwfuxtdy-12-ara5b",
+      "type": "sequence",
+      "title": "16关~20关",
+      "enabled": true,
+      "props": {
+        "failure": "stop"
+      },
+      "children": [
+        {
+          "id": "node-mwfuyhcu-13-pt1gx",
+          "type": "waitClick",
+          "title": "16关人物",
+          "enabled": true,
+          "props": {
+            "failure": "stop",
+            "asset": "100恩仇16.png",
+            "threshold": 0.7,
+            "region": "",
+            "timeout": 10000,
+            "poll": 300,
+            "offsetX": 0,
+            "offsetY": 0,
+            "afterWait": 0,
+            "stable": false,
+            "clickRetry": 2,
+            "retryGap": 300,
+            "missLimit": 0,
+            "onMiss": "stop"
+          }
+        },
+        {
+          "id": "node-mwfv0hn8-15-h2xps",
+          "type": "repeat",
+          "title": "固定循环",
+          "enabled": true,
+          "props": {
+            "failure": "stop",
+            "mode": "count",
+            "count": 5,
+            "interval": 300
+          },
+          "children": [
+            {
+              "id": "node-mwfv0n9c-16-7mwgg",
+              "type": "waitClick",
+              "title": "进入战斗",
+              "enabled": true,
+              "props": {
+                "failure": "stop",
+                "asset": "通用.png",
+                "threshold": 0.8,
+                "region": "",
+                "timeout": 0,
+                "poll": 300,
+                "offsetX": 0,
+                "offsetY": 0,
+                "afterWait": 0,
+                "stable": false,
+                "clickRetry": 2,
+                "retryGap": 300,
+                "missLimit": 0,
+                "onMiss": "stop"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "node-mwfv4iqn-17-muy2i",
+      "type": "waitImageGone",
+      "title": "战斗结束",
+      "enabled": true,
+      "props": {
+        "failure": "stop",
+        "asset": "战况.png",
+        "threshold": 0.9,
+        "timeout": 10000000,
+        "poll": 300,
+        "region": "",
+        "onTimeout": "stop"
+      }
+    },
+    {
+      "id": "node-mwfuzomh-14-ba00e",
+      "type": "wait",
+      "title": "等待",
+      "enabled": true,
+      "props": {
+        "failure": "stop",
+        "duration": 15000
+      }
+    },
+    {
+      "id": "node-mwfv6gl3-18-nuvxw",
+      "type": "click",
+      "title": "调整位置",
+      "enabled": true,
+      "props": {
+        "failure": "stop",
+        "x": 1769,
+        "y": 564,
+        "duration": 50
+      }
+    },
+    {
+      "id": "node-mwfv7u9r-19-d7o25",
+      "type": "wait",
+      "title": "等待",
+      "enabled": true,
+      "props": {
+        "failure": "stop",
+        "duration": 3000
+      }
+    },
+    {
+      "id": "node-mwfv8vtz-1a-56y7f",
+      "type": "waitClick",
+      "title": "20到21 传送门",
+      "enabled": true,
+      "props": {
+        "failure": "stop",
+        "asset": "100恩仇20_21关卡.png",
+        "threshold": 0.7,
+        "region": "",
+        "timeout": 0,
+        "poll": 300,
+        "offsetX": 0,
+        "offsetY": 0,
+        "afterWait": 0,
+        "stable": false,
+        "clickRetry": 2,
+        "retryGap": 300,
+        "missLimit": 0,
+        "onMiss": "stop"
+      }
+    },
+    {
+      "id": "node-mwfva6h9-1b-n694m",
+      "type": "wait",
+      "title": "等待",
+      "enabled": true,
+      "props": {
+        "failure": "stop",
+        "duration": 5000
+      }
+    },
+    {
+      "id": "node-mwfvasqv-1c-2kz3m",
+      "type": "click",
+      "title": "调整位置",
+      "enabled": true,
+      "props": {
+        "failure": "stop",
+        "x": 1769,
+        "y": 564,
+        "duration": 50
+      }
+    },
+    {
+      "id": "node-mwfvbc1q-1d-2zae5",
+      "type": "wait",
+      "title": "等待",
+      "enabled": true,
+      "props": {
+        "failure": "stop",
+        "duration": 1000
+      }
+    },
+    {
+      "id": "node-mwfvc2y9-1e-vneth",
+      "type": "sequence",
+      "title": "21关~25关",
+      "enabled": true,
+      "props": {
+        "failure": "stop"
+      },
+      "children": [
+        {
+          "id": "node-mwfvc2y9-1f-x0oud",
+          "type": "waitClick",
+          "title": "21关人物",
+          "enabled": true,
+          "props": {
+            "failure": "stop",
+            "asset": "100恩仇21.png",
+            "threshold": 0.8,
+            "region": "",
+            "timeout": 0,
+            "poll": 300,
+            "offsetX": 0,
+            "offsetY": 0,
+            "afterWait": 0,
+            "stable": false,
+            "clickRetry": 2,
+            "retryGap": 300,
+            "missLimit": 0,
+            "onMiss": "stop"
+          }
+        },
+        {
+          "id": "node-mwfvc2y9-1g-wzkiv",
+          "type": "repeat",
+          "title": "固定循环",
+          "enabled": true,
+          "props": {
+            "failure": "stop",
+            "mode": "count",
+            "count": 5,
+            "interval": 300
+          },
+          "children": [
+            {
+              "id": "node-mwfvc2y9-1h-qrzwu",
+              "type": "waitClick",
+              "title": "进入战斗",
+              "enabled": true,
+              "props": {
+                "failure": "stop",
+                "asset": "通用.png",
+                "threshold": 0.8,
+                "region": "",
+                "timeout": 0,
+                "poll": 300,
+                "offsetX": 0,
+                "offsetY": 0,
+                "afterWait": 0,
+                "stable": false,
+                "clickRetry": 2,
+                "retryGap": 300,
+                "missLimit": 0,
+                "onMiss": "stop"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "node-mwfyrb7l-2c-wiwp2",
+      "type": "waitImageGone",
+      "title": "等待图片消失",
+      "enabled": true,
+      "props": {
+        "failure": "stop",
+        "asset": "战况.png",
+        "threshold": 0.9,
+        "timeout": 10000,
+        "poll": 300,
+        "region": "",
+        "onTimeout": "stop"
+      }
+    },
+    {
+      "id": "node-mwfvhqq4-1m-ecq9t",
+      "type": "wait",
+      "title": "等待",
+      "enabled": true,
+      "props": {
+        "failure": "stop",
+        "duration": 20000
+      }
+    },
+    {
+      "id": "node-mwfz0a0y-2d-gs3yo",
+      "type": "click",
+      "title": "click(475, 492);",
+      "enabled": true,
+      "props": {
+        "failure": "stop",
+        "x": 475,
+        "y": 492,
+        "duration": 50
+      }
+    },
+    {
+      "id": "node-mwfz2nra-2e-j3j2e",
+      "type": "wait",
+      "title": "等待",
+      "enabled": true,
+      "props": {
+        "failure": "stop",
+        "duration": 2000
+      }
+    },
+    {
+      "id": "node-mwfvggtk-1i-3m52o",
+      "type": "sequence",
+      "title": "26关~30关",
+      "enabled": true,
+      "props": {
+        "failure": "stop"
+      },
+      "children": [
+        {
+          "id": "node-mwfvggtk-1j-gj868",
+          "type": "waitClick",
+          "title": "26关人物",
+          "enabled": true,
+          "props": {
+            "failure": "stop",
+            "asset": "100_26.png",
+            "threshold": 0.8,
+            "region": "",
+            "timeout": 0,
+            "poll": 300,
+            "offsetX": 0,
+            "offsetY": 0,
+            "afterWait": 0,
+            "stable": false,
+            "clickRetry": 2,
+            "retryGap": 300,
+            "missLimit": 0,
+            "onMiss": "stop"
+          }
+        },
+        {
+          "id": "node-mwfvggtk-1k-35xug",
+          "type": "repeat",
+          "title": "固定循环",
+          "enabled": true,
+          "props": {
+            "failure": "stop",
+            "mode": "count",
+            "count": 5,
+            "interval": 300
+          },
+          "children": [
+            {
+              "id": "node-mwfvggtk-1l-ygbiq",
+              "type": "waitClick",
+              "title": "进入战斗",
+              "enabled": true,
+              "props": {
+                "failure": "stop",
+                "asset": "通用.png",
+                "threshold": 0.8,
+                "region": "",
+                "timeout": 0,
+                "poll": 300,
+                "offsetX": 0,
+                "offsetY": 0,
+                "afterWait": 0,
+                "stable": false,
+                "clickRetry": 2,
+                "retryGap": 300,
+                "missLimit": 0,
+                "onMiss": "stop"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "node-mwfvk5fs-1n-z72q0",
+      "type": "waitClick",
+      "title": "离开副本",
+      "enabled": true,
+      "props": {
+        "failure": "stop",
+        "asset": "离开副本.png",
+        "threshold": 0.9,
+        "region": "",
+        "timeout": 0,
+        "poll": 300,
+        "offsetX": 0,
+        "offsetY": 0,
+        "afterWait": 0,
+        "stable": false,
+        "clickRetry": 2,
+        "retryGap": 300,
+        "missLimit": 0,
+        "onMiss": "stop"
+      }
+    },
+    {
+      "id": "node-mwfvku1w-1o-mf27p",
+      "type": "wait",
+      "title": "等待",
+      "enabled": true,
+      "props": {
+        "failure": "stop",
+        "duration": 1000
+      }
+    }
+  ],
+  "globalCount": 1
+}

@@ -1,0 +1,10 @@
+{
+  "name": "孩子送礼",
+  "desc": "回放「孩子送礼」的固定坐标点击和等待。",
+  "loop": {
+    "mode": "count",
+    "count": 1,
+    "durationSec": 60,
+    "interval": 0
+  }
+}
