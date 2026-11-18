@@ -469,7 +469,7 @@ function __flowMain() {
     }
     if (__flowGate("node-mwfz0a0y-2d-gs3yo")) {
         __flowNode("node-mwfz0a0y-2d-gs3yo");
-        var __flow_node_mwfz0a0y_2d_gs3yo = click(475, 492, 50);
+        var __flow_node_mwfz0a0y_2d_gs3yo = click(1565, 416, 50);
         if (!__flow_node_mwfz0a0y_2d_gs3yo) throw Error('操作失败');
     }
     if (__flowGate("node-mwfz2nra-2e-j3j2e")) {

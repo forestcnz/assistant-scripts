@@ -533,12 +533,12 @@
     {
       "id": "node-mwfz0a0y-2d-gs3yo",
       "type": "click",
-      "title": "click(475, 492);",
+      "title": "调整位置",
       "enabled": true,
       "props": {
         "failure": "stop",
-        "x": 475,
-        "y": 492,
+        "x": 1565,
+        "y": 416,
         "duration": 50
       }
     },
