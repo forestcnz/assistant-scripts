@@ -1,17 +1,17 @@
 {
   "title": "私塾学习",
-  "description": "在临安找夫子进入私塾，按预设位置为 6 个孩子领取并安排学习。",
+  "scriptId": "private-school-study",
+  "version": 2,
   "author": "forestcnz",
+  "description": "在临安找夫子进入私塾，按预设位置为 6 个孩子领取并安排学习。",
   "usage": "从能打开地图的游戏主界面启动，确认已解锁私塾学习并准备好学习所需资源。脚本经临安中心地标定位夫子，点击私塾学习入口，依次处理 6 个孩子的领取、学习、最大和确定按钮，最后关闭界面。首次运行请核对孩子排列和资源消耗。",
   "environment": "导出设计尺寸为 1920 × 1080 横屏，要求界面布局与任务素材一致。本次仅进行静态校验和打包检查，未进行设备实测。",
+  "changes": "优化调整位置",
   "capabilities": [
     "无障碍点击",
     "截屏找图"
   ],
-  "changes": "首次上架，收录 2026-11-15 本地导出的脚本、流程、运行配置和素材。",
-  "updatedAt": "2026-11-15",
-  "version": 1,
   "minAppVersionCode": 14,
-  "targetApp": "神雕侠侣",
-  "scriptId": "private-school-study"
+  "updatedAt": "2026-11-18",
+  "targetApp": "神雕侠侣"
 }

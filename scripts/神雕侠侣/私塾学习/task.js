@@ -368,7 +368,7 @@ function __flowMain() {
                 __flowNode("node-mwfzw7oh-4m-m6gxw");
                 sleep(1000);
                 __flowNode("node-mwfzw99s-4n-kzthj");
-                var __flow_node_mwfzw99s_4n_kzthj = click(973, 47, 50);
+                var __flow_node_mwfzw99s_4n_kzthj = click(973, 52, 50);
                 if (!__flow_node_mwfzw99s_4n_kzthj) throw Error('操作失败');
                 __flowNode("node-mwfzxcd3-4o-7nuin");
                 sleep(3000);
