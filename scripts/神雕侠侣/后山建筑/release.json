@@ -1,17 +1,17 @@
 {
   "title": "后山建筑",
-  "description": "进入家园后山资源场，按建筑版的坐标操作资源。",
+  "scriptId": "back-hill-construction",
+  "version": 3,
   "author": "forestcnz",
+  "description": "进入家园后山资源场，按建筑版的坐标操作资源。",
   "usage": "从能打开地图的游戏主界面启动。脚本经临安进入家园后山资源场，领取并点击建筑版指定的资源位置，尝试开采后返回临安。",
   "environment": "设计尺寸为 1920 × 1080 横屏。请确认游戏界面布局与任务素材一致。",
+  "changes": "测试更新",
   "capabilities": [
     "无障碍点击",
     "截屏找图"
   ],
-  "changes": "使用 2026-11-15 本地最新导出覆盖脚本、流程和运行配置。",
-  "updatedAt": "2026-11-15",
-  "version": 2,
   "minAppVersionCode": 14,
-  "targetApp": "神雕侠侣",
-  "scriptId": "back-hill-construction"
+  "updatedAt": "2026-11-18",
+  "targetApp": "神雕侠侣"
 }
