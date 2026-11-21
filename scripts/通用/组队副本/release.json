@@ -1,0 +1,15 @@
+{
+  "title": "组队副本",
+  "scriptId": "dd-dce620676e28495c8e4f9aa87bcf224c",
+  "version": 1,
+  "author": "forestcnz",
+  "description": "拖拽步骤，编排顺序、循环与条件",
+  "usage": "组队副本",
+  "environment": "组队副本",
+  "changes": "首次上架。",
+  "capabilities": [
+    "组队副本"
+  ],
+  "minAppVersionCode": 19,
+  "updatedAt": "2026-11-21"
+}

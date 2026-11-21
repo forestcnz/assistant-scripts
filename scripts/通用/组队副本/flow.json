@@ -1,0 +1,84 @@
+{
+  "schemaVersion": 1,
+  "nodes": [
+    {
+      "id": "node-mwqeyw2s-1-01tue",
+      "type": "repeat",
+      "title": "持续循环",
+      "enabled": true,
+      "props": {
+        "failure": "stop",
+        "mode": "forever",
+        "count": 5,
+        "interval": 300
+      },
+      "children": [
+        {
+          "id": "node-mwqez3ac-2-43iq2",
+          "type": "image",
+          "title": "组队确定",
+          "enabled": true,
+          "props": {
+            "failure": "skip",
+            "asset": "组队确定.png",
+            "threshold": 0.8,
+            "timeout": 1,
+            "poll": 300,
+            "onMatch": "click",
+            "onMiss": "continue",
+            "region": ""
+          }
+        },
+        {
+          "id": "node-mwqez5zt-3-nlp7k",
+          "type": "image",
+          "title": "副本同意",
+          "enabled": true,
+          "props": {
+            "failure": "skip",
+            "asset": "副本同意.png",
+            "threshold": 0.8,
+            "timeout": 1,
+            "poll": 300,
+            "onMatch": "click",
+            "onMiss": "continue",
+            "region": ""
+          }
+        },
+        {
+          "id": "node-mwqez7br-4-m5ewf",
+          "type": "image",
+          "title": "归队确定",
+          "enabled": true,
+          "props": {
+            "failure": "skip",
+            "asset": "归队确定.png",
+            "threshold": 0.8,
+            "timeout": 1,
+            "poll": 300,
+            "onMatch": "click",
+            "onMiss": "continue",
+            "region": ""
+          }
+        },
+        {
+          "id": "node-mwqez8b6-5-guwtl",
+          "type": "image",
+          "title": "确认",
+          "enabled": true,
+          "props": {
+            "failure": "skip",
+            "asset": "确认.png",
+            "threshold": 0.8,
+            "timeout": 1,
+            "poll": 300,
+            "onMatch": "click",
+            "onMiss": "continue",
+            "region": ""
+          }
+        }
+      ]
+    }
+  ],
+  "globalCount": 1
+}
