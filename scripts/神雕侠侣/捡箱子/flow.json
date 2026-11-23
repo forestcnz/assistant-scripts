@@ -1,0 +1,46 @@
+{
+  "schemaVersion": 1,
+  "nodes": [
+    {
+      "id": "node-mwj7wdu2-1-6j78y",
+      "type": "repeat",
+      "title": "持续循环",
+      "enabled": true,
+      "props": {
+        "failure": "stop",
+        "mode": "forever",
+        "count": 5,
+        "interval": 300
+      },
+      "children": [
+        {
+          "id": "node-mwj7xn82-2-fxtuv",
+          "type": "image",
+          "title": "找图",
+          "enabled": true,
+          "props": {
+            "failure": "skip",
+            "asset": "箱子.png",
+            "threshold": 0.8,
+            "timeout": 5000,
+            "poll": 300,
+            "onMatch": "click",
+            "onMiss": "continue",
+            "region": ""
+          }
+        },
+        {
+          "id": "node-mwj7yd84-3-debjm",
+          "type": "wait",
+          "title": "等待",
+          "enabled": true,
+          "props": {
+            "failure": "stop",
+            "duration": 6000
+          }
+        }
+      ]
+    }
+  ],
+  "globalCount": 1
+}
